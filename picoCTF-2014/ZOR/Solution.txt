@@ -1,0 +1,3 @@
+We know that there are only 256 possible keys, so we can easily brute force the decryption.
+The encryption algorithm is just an xor, so if we brute all the xor's, and grep for 'flag' or 'password'
+we get the flag.

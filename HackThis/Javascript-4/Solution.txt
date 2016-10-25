@@ -1,0 +1,6 @@
+Upon loading up the actual page for the level, it seems to redirect us to another page.
+The hint confirms this by saying that the redirected page is not the right one. So, by simply
+opening up the source of the correct page, https://www.hackthis.co.uk/levels/javascript/4,
+we can find the password.
+
+Password: smellthecheese

@@ -1,0 +1,3 @@
+If we view our cookies on the page, we can find that there is this cookie called restricted_login
+with a value of false. If we change this value to true, (I used EditThisCookie), we can enter the page and
+successfully pass the level.

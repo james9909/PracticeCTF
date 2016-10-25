@@ -1,0 +1,5 @@
+The hint tells us that "they come in pairs", which could mean that every two numbers
+translates to one letter. If we assume that 00 translates to "a", 01 translates to "b", etc,
+then we can easily translate the cipher into the flag.
+
+The flag is flag_alphabetic_indices

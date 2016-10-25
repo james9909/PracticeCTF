@@ -1,0 +1,2 @@
+Spamming %d will print out a bunch of values, with one of them being the secret.
+Input that and you get the flag.

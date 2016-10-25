@@ -1,0 +1,17 @@
+Browsing the source reveals an interesting function that seems to validate our password.
+
+<script type='text/javascript'>
+    $(function(){
+        $('.level-form').submit(function(e){
+            e.preventDefault();
+            if(document.getElementById('pass').value == correct) {
+                document.location = '?pass=' + correct;
+            } else {
+                alert('Incorrect password')
+            }
+        })
+    })
+</script>
+
+We do not know the value of correct, so we can just print it out using the console.
+The password is jrules

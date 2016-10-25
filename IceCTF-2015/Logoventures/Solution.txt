@@ -1,0 +1,5 @@
+The logo is a gif, and it appears to change its text very quickly.
+If we use a gif exploder/decompiler (I used http://gifmaker.me/exploder/), we can
+break down and view the individual frames, one of which contains the flag.
+
+The flag is boy_this_goes_by_so_fast

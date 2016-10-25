@@ -1,0 +1,37 @@
+Aha, trying to hide the javascript at the bottom of the page...
+
+<script type='text/javascript'>
+    $(function(){
+        $('.level-form').submit(function(e){
+            e.preventDefault();
+            if ($('.level-form #pass')[0].value.length == length) {
+                document.location = "2?x=" + length;
+            } else {
+                alert('Incorrect Password');
+            }
+        });
+    });
+</script>
+
+But it appears that we don't know what length is.
+However, there is another javascript function that calculates our length
+
+<script type='text/javascript'>
+    var length = 5;
+    var x = 3;
+    var y = 2;
+    y = Math.sin(118.13);
+    y = -y;
+    x = Math.ceil(y);
+    y++;
+    y = y+x+x;
+    y *= (y/2);
+    y++;
+    y++;
+    length = Math.floor(y);
+</script>
+
+Or we could simply print out the value of length in the console...
+The length is 9, so we need to input any string that is 9 characters long.
+
+Password: .{9}

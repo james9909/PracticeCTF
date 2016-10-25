@@ -1,0 +1,8 @@
+This level was a bit tricky, only because of the last question.
+In order to find the host and ip, you can use a tool online called http://www.whoishostingthis.com.
+Now, in order to find the X-B6-Key, you need to dive into your email and into any mail sent from the website.
+Following that, view the original source of the email and look for the X-B6-Key.
+
+IP: 85.159.213.101
+Host: Linode
+X-B6-Key header: Lajklsb#!"3jlak

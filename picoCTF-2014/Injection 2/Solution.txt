@@ -1,0 +1,7 @@
+We want to inject a fake user with a level of over 1337.
+To do this, we do
+
+    ' UNION SELECT all "", "", "", "", 1338 --
+
+No password needed because our fake user doesn't have one
+We can now log in and see the flag!

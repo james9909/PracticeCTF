@@ -1,0 +1,3 @@
+If we look at the source of the webpage, we can find the javascript code that
+is used to generate the flag. If we translate it to any other language, like python,
+we can run it and get the flag.

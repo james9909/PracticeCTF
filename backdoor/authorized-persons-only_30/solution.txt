@@ -1,0 +1,4 @@
+Looking at the web page, we find yet another cookie labelled "admin". Change its value from
+0 to 1 to get the flag:
+
+CnAohOvgawaaYXAcJNOuWazQwGHPkvzLE5lGDeSeVCX5BZEVAOOerV7OYB4KFw2c

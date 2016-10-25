@@ -1,0 +1,22 @@
+What's important to note is this javascript function:
+
+function loadimage()
+{
+    var username= document.getElementById('username').value;
+    var password= document.getElementById('password').value;
+    URL= "members/" + username + " " + password + ".htm";
+    path = URL;
+    document.getElementById("status").innerHTML = 'Checking details...';
+
+    req = getreq();
+    req.onreadystatechange = exists;
+    req.open("get", path, true);
+    req.send(null);
+}
+
+What this effectively does is check if the page at members/usernamepassword.htm exists, and if it does, then we get redirected to the main page.
+Since the username+password.htm is going to be a page, we can look at the members directory via https://www.hackthis.co.uk/levels/extras/real/2/members.
+This lists a bunch of pages, which are usernames and passwords. Looking at one of them, we can find the username and passwords for librarian.
+
+Username: librarian
+Password: sweetlittlebooks

@@ -1,0 +1,10 @@
+This login screen is trying something a bit different and is not using SQL. Try and login as the user whose real name is 'Sandra Murphy'.
+
+We need to login as someone whose real name is 'Sandra Murphy', so let's try
+'or realname='Sandra Murphy'
+
+Hmm. The server seemed to reject my query. But, the login screen is NOT using SQL, so playing around some more
+reveals that we should use another 'or' condition and that it should not end with a ', bringing the
+payload to look something like
+
+'or realname='Sandra Murphy' or '1'='1

@@ -1,0 +1,8 @@
+If we try submitting a letter, we can see that we are submitting via mod.php.
+Trying to view mod.php prompts us with a login page, where we can login successfully
+with a basic SQL injection
+
+    ' or 1=1 --
+
+Now, we can view the source of index.php and change its contents to that of the webpage
+we want to show instead.

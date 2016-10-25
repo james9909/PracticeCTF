@@ -1,0 +1,2 @@
+A simple binwalk revealed that there was a hidden zip archive within the photo, which contained a
+nice secret.txt with the login credentials.

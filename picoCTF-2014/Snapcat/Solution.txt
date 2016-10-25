@@ -1,0 +1,2 @@
+Recovering the disk.img with a recovery software such as PhotoRec will extract the photos,
+with one of them containing the flag.

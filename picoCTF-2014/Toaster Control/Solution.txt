@@ -1,0 +1,4 @@
+In the source code of the website, we can see that there are three buttons that execute
+three different commands. The command we want is 'Shutdown & Turn Off'. If we url encode it
+and change the action of one of the buttons, we can execute this command and
+get the flag.

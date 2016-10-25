@@ -1,0 +1,11 @@
+We can access the builtins via sub-typing and method resolution, or more specifically the file
+function via:
+
+    f = [].__class__.__base__.__subclasses__()[40]
+
+What this does is grab the 40th index of all the built in subclasses, which happens to be the file function.
+With this, we can open flag.txt and read it via:
+
+    print(f("flag.txt").read())
+
+The flag is not_your_average_python

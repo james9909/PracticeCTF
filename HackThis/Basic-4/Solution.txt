@@ -1,0 +1,7 @@
+Using a nice tool called exif, we were able to view the metadata of the jpg. For the user, all
+we needed to do was find the name of the artist, which happened to be james.
+For the password, we could see that there was a comment, saying 'I like chocolate'.
+Knowing this, we can infer that the password is chocolate.
+
+Username: james
+Password: chocolate

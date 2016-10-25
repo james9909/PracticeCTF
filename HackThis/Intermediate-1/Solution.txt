@@ -1,0 +1,2 @@
+All we need to do is enter a url parameter with a name of password and value of flubergump.
+This can be done by requesting the page https://www.hackthis.co.uk/levels/intermediate/1?password=flubergump

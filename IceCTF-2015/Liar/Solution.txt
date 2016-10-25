@@ -1,0 +1,5 @@
+The flag that is initally on the website is incorrect, so there must be something in the source.
+Viewing the source, we can see that there is this interesting function called printFlag.
+Running printFlag() in the console will change the flag on the page to the correct one.
+
+The flag is hidden_in_the_code

@@ -1,0 +1,14 @@
+We want to set someone's vote count to 111, but we can't just click our way to victory.
+Looking at the source code, this line seems like the place to exploit.
+
+    $query = "UPDATE noescvotes SET `$who`=`$who`+1 WHERE id=1";
+
+The code also filters out single quotes, but backticks are being used in the query.
+We can set bill's vote count by doing this:
+
+    bill` = 111
+
+However, there is an error within the syntax, and by looking at the error, we know that
+we need to add another candidate.
+
+Final payload is: bill`= 111,`george`= `george

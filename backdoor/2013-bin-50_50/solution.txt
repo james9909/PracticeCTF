@@ -1,0 +1,26 @@
+Running `strings` on the file, we find several suspicious plaintext strings:
+
+...
+Password is Advicemallard
+Password is Butter
+Password is Hoobastank
+Password is Darth
+Password is Jedimaster
+Password is Masternamer
+Password is Morpheus
+Password is Neutron
+Password is Coyote
+Password is Tweety
+...
+
+Trying each of the strings as the password, we find that the correct one is "Masternamer"
+
+$ ./binaary50 Masternamer
+3cd50c6be9bbede06e51741928d88b7e
+
+Take the sha256 hash of that string to get the flag:
+
+$ python
+>>> import hashlib
+>>> hashlib.sha256("3cd50c6be9bbede06e51741928d88b7e").hexdigest()
+dad827e94c609b76424287f2523b2117475df29e4ca8475444a9976faedc00f7

@@ -1,0 +1,5 @@
+The text was actually encoded with a substitution cipher, so if we decode it, we get the original message:
+
+    Hi, this is a similar idea to level two. This time each letter is assigned a specified relationship with another letter. Pass: ihavefriends
+
+Password: ihavefriends

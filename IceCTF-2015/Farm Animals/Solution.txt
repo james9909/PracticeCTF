@@ -1,0 +1,3 @@
+The characters are actually in pigpen, so if we translate it, we get the flag.
+
+The flag is flag_pigs_shouldnt_write

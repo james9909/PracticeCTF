@@ -1,0 +1,2 @@
+Upon closer inspection, this 'jar' file is actually a zipped archive. Unzipping
+it gives us a bunch of files, as well as pickle.p. Cat-ing pickle.p reveals the flag.

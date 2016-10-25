@@ -1,0 +1,6 @@
+The hint gave away the entire problem, suggesting that we look into the robots.txt file.
+So, if we go to https://www.hackthis.co.uk/robots.txt, we find a list of pages that are hidden from Google.
+One of them is levels/extras/userpass.txt, so if we go to that file, we get the correct credentials.
+
+Username: 48w3756
+Password: u3qh458

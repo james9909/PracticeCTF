@@ -1,0 +1,2 @@
+Each number in the set represents a position in the text. The first number is the paragraph, second 
+is the sentence, and third is the word. Ex: (1, 9, 4) represents the first paragraph, line 9, word 4.

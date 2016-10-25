@@ -1,0 +1,4 @@
+If we run the ciphertext through a cipher solver such as quipqiup, or a substitution solver,
+then we can decode the message easily. Or you can do it by hand.
+
+The flag is flag_substitution_ciphers_are_bad

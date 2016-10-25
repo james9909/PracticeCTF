@@ -1,0 +1,4 @@
+Using gdb or objdump, we can find the address of give_shell, which is 080484ad.
+Now, we can overflow the return address to run give_shell. Looking at the interactive
+buffer, we can tell that we want to over write %eip. Flooding everything else with "A's" or
+whatever then adding '\xad\x48\x04\x08'(the return address backwards) gives us the shell.

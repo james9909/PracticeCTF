@@ -1,0 +1,6 @@
+This problem is also very similar to another ctf problem, namely Hack.lu's Objection problem.
+We need to change the value of is_admin to true, and we can do this via defineGetter.
+Going to this url gives us the flag.
+http://coffee.icec.tf/__defineGetter__?args=is_admin
+
+The flag is flag_i_dont_even_like_coffee_but_i_love_coffeescript

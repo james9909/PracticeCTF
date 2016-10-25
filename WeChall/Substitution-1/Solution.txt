@@ -1,0 +1,3 @@
+Using quippiuq, we can decode the substitution cipher and get the password
+
+Password: ALIGBBISCCPL

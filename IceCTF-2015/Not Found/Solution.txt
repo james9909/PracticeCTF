@@ -1,0 +1,6 @@
+The problem does not give us an explicit goal, except to find the problem.
+The hint tells us to look on the CDIV(194) page, so if we try to go to the
+page on the website with that url we find the flag.
+https://icec.tf/CDIV(194)
+
+The flag is flag_there_you_are_you_silly_flag

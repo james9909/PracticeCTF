@@ -1,0 +1,2 @@
+We need to send a score of 194175 to the server, and since we aren't use GET, we can assume that we need
+to send it via POST. Using postman, I was able to send the necessary data to pass the level.

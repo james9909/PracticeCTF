@@ -1,0 +1,5 @@
+Using wireshark, we can view the captured packets that travelled from the client and server at http://web2015.icec.tf/sharknado/login.php
+If we filter the ips to the ip of http://web2015.icec.tf/sharknado/, we can narrow down our search and look for the captured packet
+containing the post data for a successful login. Using those credentials, we can login and get the flag.
+
+The flag is flag_damn_that_movie_was_bad

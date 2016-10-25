@@ -1,0 +1,3 @@
+We need to login as Ronald, but there is no 'Ronald' in the list of users.
+So, we just fire up inspect element and change one of the entries to Ronald.
+Then, we can successfully login.

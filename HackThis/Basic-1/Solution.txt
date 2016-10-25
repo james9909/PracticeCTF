@@ -1,0 +1,6 @@
+Opening the file in a text editor shows that this is no ordinary text file.
+Running file b1.txt seems to suggest that it actually a bitmap.
+Opening this bitmap in any image editor should yield the correct credentials.
+
+Username: paint
+Password: rules

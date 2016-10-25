@@ -1,0 +1,6 @@
+The ciphertext is reversed, yet again, so if we reverse it and input it into a cryptogram
+solver (such as quippiuq), we get the original message:
+
+    Yes i am a criminal. My crime is that of curiosity. My crime is that of judging people by what they say and think, not what they look like. My crime is that of outsmarting you, Something that you will never forgive me for. But the pass: TheMentor
+
+Password: TheMentor

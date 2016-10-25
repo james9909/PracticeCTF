@@ -1,0 +1,10 @@
+Opening up the file in audacity and looking at the spectrogram, we can see that there are some
+weird symbols within. A bit of research shows that these are Mayan numbers, and if we translate
+them, we get:
+
+    69593078616075
+
+I tried decoding from hex, but it didn't look like anything meaningful, until I noticed that
+the hint said that the password would not be a word.
+
+Password: iY0xa`u

@@ -1,0 +1,16 @@
+If we select one of the links, we can see that in the url, there is a parameter where the page
+is being passed into. If we change p to a page that doesn't exist, like oijaisofjoij, then we get an
+error stating:
+
+    Warning: file_get_contents(oijaisofjoij.html) [function.file-get-contents]: failed to open stream: No such file or directory in pages on line 22
+
+We would like to be able to load up admin.php, but we can't since it's adding .html to the end of the string.
+However, using null bytes, (%00), we can ignore the .html and load up admin.php, but it isn't in the current directory.
+Going back a directory works and the page is loaded up successfully.
+
+    https://www.hackthis.co.uk/levels/extras/real/5/?p=admin.php%00
+
+Looking at the source code, there is a comment containing the actual password, so going to the real admin page, we
+can enter the password and pass the level.
+
+Password: princesslovetoast

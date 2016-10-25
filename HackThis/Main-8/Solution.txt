@@ -1,0 +1,5 @@
+This is the same exploit as level 4, but the username and password within the file are encrypted.
+The hint tells us that it is in base16, so if we convert from binary to base16, we get the correct credentials.
+
+Username: B00B
+Password: FEED

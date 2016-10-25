@@ -1,0 +1,5 @@
+If we poke around his email, we can find an old email in his trash, which contains his password.
+Then, going into the login page, which can be found in one of his inbox emails, we can enter ths password
+and pass the level.
+
+Password: iamgod

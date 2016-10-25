@@ -1,0 +1,4 @@
+We can use photorec to extract the contents of the filesystem. Looking at the extracted "noob.txt", we find the flag:
+
+$ echo -n "like_a_walk_in_a_park" | sha256sum
+bc2e81c4c8abd0fe06d54bf0768036ecaea12892efdd6cd567235c84a16c8c07

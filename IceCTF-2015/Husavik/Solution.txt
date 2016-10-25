@@ -1,0 +1,5 @@
+We can easily decompile apk files, and get the source of the app.
+Then, within src/tf/icec/husavik/b.java, we find this interesting string encoded in base64.
+Decoding this string will reveal the flag.
+
+The flag is flag_wait_wasnt_it_dalvik

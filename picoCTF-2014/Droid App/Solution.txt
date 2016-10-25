@@ -1,0 +1,3 @@
+Using an online apk decompiler (decompileandroid.com), we can now view the source.
+Looking through the pico folder, we find a ToasterActivity.java.
+Within the file is the flag.

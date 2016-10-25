@@ -1,0 +1,5 @@
+Opening the document does not reveal anything out of the ordinary, but running binwalk
+on the file shows that there is a zip archive hidden within the document.
+If we unzip file.docx, we get a bunch of files, including flag.txt which contains the flag.
+
+The flag is this_would_be_the_flag_you_are_looking_for

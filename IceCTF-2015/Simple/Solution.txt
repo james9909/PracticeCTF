@@ -1,0 +1,7 @@
+The server asks us to add a number to the ascii value of ";" that would give the ascii value of "i".
+The difference between the two characters is 46, but the server only accepts values greater than 100.
+Playing around with some numbers shows that the values wrap around, so we just need to find the value at which the number
+wraps around, and add 46 to it.
+Inputting 256 gives us back ";", so adding 46 to that would give us 302, which is the correct input.
+
+The flag is very_simple_right

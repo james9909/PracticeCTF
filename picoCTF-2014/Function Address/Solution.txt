@@ -1,0 +1,6 @@
+We can find the address of any function or variable using gdb.
+
+    gdb problem
+    print &find_string
+
+Which is the flag.

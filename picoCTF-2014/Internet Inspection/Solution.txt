@@ -1,0 +1,4 @@
+If we do inspect element on the webpage, we find out that the flag is concealed by
+a pattern of checkers. If we remove 'checkers' from the style, we see the flag a bit more
+clearly. However, it is blurred. Upon looking around a bit, one can find that a table is being blurred.
+If we delete that, the flag becomes clear.

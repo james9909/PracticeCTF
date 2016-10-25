@@ -1,0 +1,6 @@
+The page redirects to the levels page upon entering an incorrect password, but its still possible to Ctrl-U the source.
+They hid the secret password within the extra js file that you can find at the bottom of the page. (Since the file name is different each
+time, I cannot just link the file)
+You can either do the math, or input the calculations into a console to get the password.
+
+Password: hats

@@ -1,0 +1,2 @@
+The easiest and most simple SQL injection is the ' OR 1=1 -- injection.
+Using that as the username and password will let us pass the level.

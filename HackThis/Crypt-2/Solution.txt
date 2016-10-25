@@ -1,0 +1,3 @@
+The message was encrypted via the caesar cipher. Simply try all 26 shifts to get the correct message.
+
+Password: shiftthatletter

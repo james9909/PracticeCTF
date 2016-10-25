@@ -1,0 +1,7 @@
+The filter seems to be removing <script> and </script> tags, so let's see if we can fool it into making a <script> tag.
+This is fairly simple, since if we know that it removes <script> from the string, we can actually make a <script> tag via
+<scr<script>ipt>. Similarly, to make a </script> tag, we can do </scr</script>ipt>.
+This removes <script> and </script> from the tags, which joins them together, bypassing the filter.
+The final payload may look like:
+
+    <scr<script>ipt>alert("HackThis!!");</scri</script>pt>

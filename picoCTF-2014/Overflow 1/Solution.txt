@@ -1,0 +1,5 @@
+Looking at the source shows that we need to overflow the buf buffer, which is 16 characters long.
+If we spam it with 16 A's, we can now write to secret. It's asking us if secret is 'c0deface', then
+it will give us the perms needed to view flag.txt.
+Flowing in \xce\xfa\xde\xc0 after the A's will give us the shell.
+The complete overflow is AAAAAAAAAAAAAAAA\xce\xfa\xde\xc0

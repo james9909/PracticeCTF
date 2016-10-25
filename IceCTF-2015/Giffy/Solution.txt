@@ -1,0 +1,5 @@
+This problem was similar to another problem I did for pico, and I guessed that the flag file would
+be one level below all the other gifs. The url I went to was http://web2015.icec.tf/giffy/gif.php?gif=../flag.txt
+but it didn't show me anything. Running it through curl however, revealed the flag.
+
+The flag is flag_donald_62Ia6KTXSVviM

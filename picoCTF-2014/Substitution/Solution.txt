@@ -1,0 +1,2 @@
+If we run a substitution cipher solver such as quippiuq, we get the decoded
+text, and upon reading it, we get the flag.

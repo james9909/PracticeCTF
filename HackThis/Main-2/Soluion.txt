@@ -1,0 +1,8 @@
+Yet again, if we browse the source of the page, we can see that the correct credentials are listed right next
+to the inputs.
+
+<label for="user">Username:</label> <span style="color: #000000">resu</span>
+<label for="user">Password:</label> <span style="color: #000000">ssap</span>
+
+Username: resu
+Password: ssap

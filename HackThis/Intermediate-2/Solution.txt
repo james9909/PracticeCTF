@@ -1,0 +1,2 @@
+We cannot simply curl --data because it won't be linked with our account, so I used
+postman to send a POST request with a key of password and value of flubergump.

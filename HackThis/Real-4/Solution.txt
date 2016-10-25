@@ -1,0 +1,25 @@
+This problem was a little bit long, only because there was so much information to keep track of.
+
+In order to solve the problem, you need to first acquire the admin account on PlanetBid, which
+can be done by logging in with the credentials admin:asdfg. At the top, it tells us that admin activity is logged,
+which is suspicious, so we then clear the logs to hide our tracks. Now, as admin, we can view bids and all the members.
+
+We don't know exactly what the our client sold, but we do know by looking at members.db that he has an id of 31.
+If we look at the bids.db, we get to see that only one bid took place where a user with id of 31 was involved as
+the seller, and that is a RARE Dr. Pepper for 1.32 euros. We also now know the id of the buyer, a user with an id of
+11. Consulting the members database, we find that this person's username is nemisis and their email is jelliot@mail.com.
+However, this isn't all that we can find out, because looking at the url:
+
+    https://www.hackthis.co.uk/levels/extras/real/4/planetbid/view.php?members&1=user&2=email
+
+we notice that columns are displaying data based on the values of &1 and &2. Changing &2 to pass gives
+us the password of all the users. Nemisis's account password is 742929dcb631403d7c1c1efad2ca2700, which
+is the md5 hash of chicken. Knowing all of this, we can now connect to his email with the credentials
+jelliot@mail.com and chicken.
+
+Now that we have access to his email, we can request his SafeTransfer account password with the username nemisis and
+email jelliot@mail.com.
+It turns out that his SafeTransfer account password is i.am.awesome, so we can now log into his SafeTransfer account.
+
+To complete the level, you need to transfer 1.32 (euros) to the account 64957746. Any more or less will fail the level.
+Also, it is important that you clear the admin logs on PlanetBid or else the level will fail as well.

@@ -1,0 +1,4 @@
+The problem tells us that the solution is hidden within the page, and we can find
+it by scrolling all the way down to the bottom of the page.
+
+Password: html_sourcecode

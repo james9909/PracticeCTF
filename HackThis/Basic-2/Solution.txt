@@ -1,0 +1,4 @@
+We need to have a secure_user_agent in order to pass the level.
+Luckily for us, Chrome has an easy way to spoof our user-agent via devices.
+If we create a device and set its user agent to secure_user_agent, and use that device to view the page,
+then we pass.

@@ -1,0 +1,6 @@
+Grep is a command that lets us search through text for a certain string. We know the
+string is 'daedaluscorp.txt.enc', so if we do
+
+    cat keys | grep 'daedaluscorp'
+
+we get the flag.

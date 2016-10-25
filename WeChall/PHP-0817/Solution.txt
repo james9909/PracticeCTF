@@ -1,0 +1,3 @@
+We don't need to do any real work, we can simply request the solution page and we solve the level.
+This is due to the fact that the script is comparing a string to a number, which will almost always
+be 0.

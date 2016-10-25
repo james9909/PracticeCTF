@@ -1,0 +1,5 @@
+This is a basic SQL injection. Set the username and password fields to
+
+    ' OR 1=1 LIMIT 1 --
+
+and get the flag.

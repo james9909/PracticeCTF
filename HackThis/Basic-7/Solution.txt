@@ -1,0 +1,8 @@
+The problem seems to suggest that some kind of server is being run. We can use nmap to scan
+all available ports with
+
+    nmap -p- -v www.hackthis.co.uk
+
+Trying to connect to each of the ports reveals that port 6776 yields the correct password.
+
+mapthat

@@ -1,0 +1,2 @@
+The pdf is redacted, so if we use an online pdf extractor such as extractpdf.com,
+we can remove the black boxes and see the flag.

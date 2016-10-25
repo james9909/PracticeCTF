@@ -1,0 +1,21 @@
+Looking at the code, it seems pretty difficult to reverse the hash, but we can notice that at the top, there
+is a comment telling us what kind of login system was implemented.
+
+    // Login version 4.2 june 2000 Copyright D10n...
+    // Courtesy of SimplytheBest.net (http://simplythebest.net/scripts/DHTML_scripts/)
+
+The link is dead (probably too old), but looking it up on the internet reveals a very interesting post by some guy over at
+http://www.codingforums.com/javascript-programming/4939-hellp-savascript-login.html
+He has a question, which we don't really care about, but he attatches the files used for login.
+Inside, there are a few files, most importantly members.js, which has the usernames and passwords stored in plaintext.
+
+Over on the server that we need to break into, we can view the members by simply going to the members.js file.
+
+    m[m.length]=new Array("Admin","password","Home","/levels/real/3?pw=password");
+    m[m.length]=new Array("John T","sheeprule","Home2","/levels/real/3?pw=newsheep");
+    m[m.length]=new Array("Temp","password","Loloips","http://www.google.com");
+
+The first login didn't work, but the second one did.
+
+Username: John T
+Password: sheelrule

@@ -1,0 +1,6 @@
+Same with level 4, there is a password file containing the username and password.
+However, they seem to be encrypted with some sort of hash.
+Running the hashes through a hash checker seems to indicate that it may be sha256, which turns out to be correct.
+
+Username: carl
+Password: guess

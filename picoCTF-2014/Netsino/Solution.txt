@@ -1,0 +1,3 @@
+We need to overflow our bet so that it goes negative, so that if we lose, we gain money.
+You can't just overflow it too much, otherwise it will become more than you have.
+The size of an int, or 2147483648 will work. After choosing a choice, we get the flag.

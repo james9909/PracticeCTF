@@ -1,0 +1,4 @@
+The website does not seem to have anything on the surface, but if we dive into the
+source, we can find a comment containing the flag
+
+<!-- flag_6cfed25a8df3794f7c6258045a8a8e7c235b7484 -->

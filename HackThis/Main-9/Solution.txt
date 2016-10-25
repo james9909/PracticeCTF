@@ -1,0 +1,4 @@
+Inputting our own address into the credentials requester does not seem to work.
+Looking at the source, there appears to be a hidden input with the admin's email. Trying that does not yield the credentials either.
+We would like to send the credentials to our own email, but we can't. Now, we can assume that the email that we submit
+is being checked against the hidden email, so if we change that email to our own, we pass the level.

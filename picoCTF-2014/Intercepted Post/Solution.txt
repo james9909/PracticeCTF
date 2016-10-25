@@ -1,0 +1,5 @@
+Opening up the wireshark file in wireshark or cloudshark reveals a bunch of packets.
+The hint tells us that a login is done through a POST request, so if we filter all the packets
+by the string 'POST', we narrow down our search greatly. Then, we notice that there login request, and if
+we follow the stream, we find the username and password. The password is url encoded, so if we decode it,
+we get the flag.

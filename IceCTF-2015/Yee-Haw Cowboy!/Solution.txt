@@ -1,0 +1,5 @@
+This problem is nearly identical to picoctf's Supercow problem.
+All we need to do is link the flag.txt to a .cow file that we can access.
+Then, running the cow executable on that .cow file will print out the flag.
+
+The flag is flag_moo_moo_the_cow_says

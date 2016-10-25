@@ -1,0 +1,9 @@
+Looking at the source code shows that we need the value of secret to be '1337beef'.
+However, we don't know the address of secret just yet, so we can't write to it.
+We can open up the gdb and get the address of secret by doing
+
+    gdb write_right
+    print &secret
+
+Now we know the address of secret, so if we run write_right, we can tell it to write
+'1337beef' to 0x804a03c, which will give us the flag.

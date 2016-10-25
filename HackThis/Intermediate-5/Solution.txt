@@ -1,0 +1,5 @@
+After getting myself banned once, and then turning off my browser vpn magically made any login attempt
+I made work.
+
+After looking at some other people's solutions, it appears that the level was supposed to have been solved
+by adding '\n' to the end of the username or something to commit Log Injection.

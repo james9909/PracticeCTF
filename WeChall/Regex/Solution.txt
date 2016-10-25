@@ -1,0 +1,16 @@
+Level 1:
+Solution: /^$/
+
+Basically what this does is match every line where there is nothing between the beginning and end of the line.
+^ denotes beginning of a line, $ denotes the end.
+
+Level 2:
+Solution: /^wechall$/
+
+Level 3:
+Solution: /^wechall4?\.(?:jpg|gif|tiff|bmp|png)$/
+
+Level 4:
+Solution: /^(wechall4?)\.(?:jpg|gif|tiff|bmp|png)$/
+
+Basically to capture a regex match, put parenthesis around what you wan to capture.

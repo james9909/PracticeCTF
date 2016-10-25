@@ -1,0 +1,10 @@
+Looking at the source, near the section with the form, there is a hidden input that seems to store the location
+of a secret file.
+
+<input type="hidden" name="passwordfile" value="../../extras/ssap.xml">
+
+If we go to https://www.hackthis.co.uk/levels/extras/ssap.xml, which is the path to this file, we can find the
+credentials right there on the page.
+
+Username: 999
+Password: 911

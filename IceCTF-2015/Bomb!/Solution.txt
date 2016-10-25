@@ -1,0 +1,6 @@
+Looking at the website, there appears to only be two options, and neither of them defuses the bomb.
+However, looking at the source code, each button sends to index.php an action, and if we simply change the action
+from detonate to defuse, then we get the flag.
+http://web2015.icec.tf/bomb/index.php?action=defuse
+
+The flag is flag_the_building_is_safe

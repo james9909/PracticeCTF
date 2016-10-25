@@ -1,0 +1,10 @@
+In the source, we see that pictures are being loaded into the web page with a php script
+called file_loader.php. We also see a path to a file called flag. If we try going to
+
+    http://web2014.picoctf.com/potentially-hidden-password-3878213/file_loader.php?file=/resources/secrets/flag
+
+then we will get an error saying that there is no file called /resources/files/resources/secrets/flag
+Now we know that file_loader starts searching from files in the /resources/files directory.
+We make it read the flag file by using .., with the final url being
+
+    http://web2014.picoctf.com/potentially-hidden-password-3878213/file_loader.php?file=../secrets/flag

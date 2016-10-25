@@ -1,0 +1,6 @@
+If we browse the source code of the page, we can find an interesting comment within the code.
+
+<!-- username: in, password: out -->
+
+Username: in
+Password: out

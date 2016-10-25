@@ -1,0 +1,8 @@
+Viewing some of the source of the login page, we can tell that register_globals is set,
+and a bit of research reveals that we can set variables through GET, so if we run
+
+    http://web2015.icec.tf/injection/login.php?dbg=true
+
+we can set dbg to true and get the correct credentials.
+
+The flag is flag_why_would_this_even_be_a_feature

@@ -1,0 +1,2 @@
+Performing binwalk on image.png proves that there is actually a zipped archive
+within the picture. Extracting it gives us the flag.

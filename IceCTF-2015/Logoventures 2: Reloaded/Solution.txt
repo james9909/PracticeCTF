@@ -1,0 +1,6 @@
+The flag is actually located within the hex code of the picture, and we can use the
+strings command to get all the strings within the picture and grep for the flag.
+
+    strings logo.jpg | grep flag
+
+The flag is now_youre_thinking_with_exif

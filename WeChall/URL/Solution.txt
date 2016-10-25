@@ -1,0 +1,4 @@
+The text is url encoded, so if we run it through a url decoder such as http://meyerweb.com/eric/tools/dencoder/,
+we can decode the message and get the url we need to pass the level
+
+    http://www.wechall.net/challenge/training/encodings/url/saw_lotion.php?p=ermppsdomsdh&cid=52#password=fibre_optics

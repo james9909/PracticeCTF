@@ -1,0 +1,9 @@
+Browsing the source, there seems to be some javascript that runs when we load up the page:
+
+var pass;
+pass=prompt("Password","");
+if (pass=="9286jas") {
+    window.location.href="/levels/main/5?pass=9286jas";
+}
+
+Password: 9286jas

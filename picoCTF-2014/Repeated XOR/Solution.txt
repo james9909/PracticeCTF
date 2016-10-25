@@ -1,0 +1,2 @@
+Using xortool, we were able to brute force possible encryption keys. Within
+032.out, we find the correctly decrypted text, along with the flag.

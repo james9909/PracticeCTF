@@ -1,0 +1,3 @@
+Running 'strings cyborg_defense' will give us all the strings within a the file.
+Among all the strings is the password. Run the executable with the password to
+get the flag.

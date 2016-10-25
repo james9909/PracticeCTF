@@ -1,0 +1,22 @@
+This is basic ASM, and it really is basic.
+What we want to find is the value of %eax by the time the program ends.
+It may look absolutely confusing, but it isn't so bad.
+Translated to python, the program looks like this:
+
+ebx = 533
+eax = 8842
+ecx = 16131
+if ebx < eax:
+    ebx = eax * ebx
+    ebx = eax + ebx
+    eax = ebx
+    eax = eax - ecx
+else:
+    ebx = eax * ebx
+    ebx = eax - ebx
+    eax = ebx
+    eax = ecx + eax
+
+print eax
+
+Running this in python will give you the flag.

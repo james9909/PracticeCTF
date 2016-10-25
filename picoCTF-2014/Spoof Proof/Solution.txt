@@ -1,0 +1,6 @@
+Browsing through the intercepted traffic, we can see that there is an instance of a duplicate ip.
+The duplicate is the spoofed ip(192.168.50.4), and we can see the MAC address of the user, which is the
+MAC address of the user CadmusCo_e6. Right before the spoofed ip, we see another MAC address with a different
+ip, which is the original(192.168.50.3). Now, we just need the name of the user. Looking for a request to
+the original ip, we find the page of john.johnson. Combining the 3 pieces of info that we have, we get
+the flag.

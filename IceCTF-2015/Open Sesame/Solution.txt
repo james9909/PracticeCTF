@@ -1,0 +1,6 @@
+Using jd-gui, we decompiled the class file, and were able to view the source.
+It seems that the program checks your input against a bunch of words to see if its the flag.
+Upon learning that the first couple of words was flag_reverse, it was easily guessed that the other 2 words
+were engineer_iceectf.
+
+The flag is flag_reverse_engineer_icectf

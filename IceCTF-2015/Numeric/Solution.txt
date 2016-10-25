@@ -1,0 +1,3 @@
+The text in the problem is encoded in base64 so if we decode it, we get the flag.
+
+The flag is lost_in_the_numbers

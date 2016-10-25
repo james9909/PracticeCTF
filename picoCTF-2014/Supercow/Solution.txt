@@ -1,0 +1,7 @@
+The program reads any file that has the .cow extension. However, the flag is a
+txt, so we need to somehow turn it into a .cow. The hint tells us to look up
+symbolic links, so we know that we need to link a .cow file to the flag.
+With the following commands, we can link a .cow file and the flag, and get said flag
+
+    ln -s /home/daedalus/flag.txt flag.cow
+    /home/daedalus/supercow flag.cow

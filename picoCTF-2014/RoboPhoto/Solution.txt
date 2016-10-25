@@ -1,0 +1,2 @@
+If we reverse search the image on Google, we find the name of the book, which
+is the flag.

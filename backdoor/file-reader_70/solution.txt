@@ -1,0 +1,5 @@
+Looking around the file tree, we find "flag.php" at http://hack.bckdr.in/FLREAD/app/flag.php.
+
+Using the file viewer, we can request the flag by querying ".../flag.php".
+
+93b9e8c732573769fac43d744fad4120bde8d1f98cc1f6e9011045ff72f45b96

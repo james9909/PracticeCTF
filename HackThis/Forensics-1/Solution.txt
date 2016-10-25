@@ -1,0 +1,8 @@
+We can use PhotoRec to recover the files from the disk image, and rarcrack to crack the password
+of the rars. Inside one of the rars is a .wav file, which we can extract tones from with
+http://www.dialabc.com/sound/detect/index.html, where we get these tones:
+
+    AA6BA4A83C67DDC7
+
+Noticing the format of the mission codes within one of the txt files, we can format the password to be correct.
+Password: AA6B-A4A8-3C67-DDC7

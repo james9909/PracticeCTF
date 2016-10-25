@@ -1,0 +1,5 @@
+Visiting the web page, we are told that we are not admin, and cannnot proceed further.
+Looking at our cookies, we find a "username" cookie with the value "john".
+Changing its value to "admin", we can reload the page and get the flag:
+
+9826f65d07b8861bfad0aba3be5e5f4a4207d1c850527f4d3a2266eca4965de3

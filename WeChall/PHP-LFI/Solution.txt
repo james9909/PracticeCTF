@@ -1,0 +1,4 @@
+Relative to where we are, solution.php is at ../../solution.php.
+However, the script adds .html to the end of the path, so we need to add a null byte.
+
+The page that should be requested is ../../solution.php%00

@@ -1,0 +1,21 @@
+Browsing the source of the page, we can find a very interesting javascript function that seems
+to verify our login. Made prettier, it looks like this:
+
+<script type='text/javascript'>
+    $(function(){
+        $('.level-form').submit(function(e){
+            if(document.getElementById('user').value == 'heaven' && document.getElementById('pass').value == 'hell') {
+            } else {
+                e.preventDefault();
+                alert('Incorrect login')
+            }
+        })
+    })
+</script>
+
+More specifically, we want to look at this
+
+if(document.getElementById('user').value == 'heaven' && document.getElementById('pass').value == 'hell') {
+
+Username: heaven
+Password: hell

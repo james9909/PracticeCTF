@@ -1,0 +1,6 @@
+If we look at the code, we can tell that we need answer[0] to be 0x52657663
+and answer[1] to be 0x30646521. If we decode these two from hex to ascii, we figure out
+that our input needs to be 'Revc0de!' in some other order. The website also tells us that
+little endian is being used, which reverses the input onto the memory. The hint tells us that
+an integer is 4 bytes, or 4 characters, which means that we need to reverse 'Revc0de!' in groups of 4.
+If we reverse it, we get 'vceR!ed0', which is the correct answer.

@@ -1,0 +1,5 @@
+As the name of the problem suggests, the message is encoded using rot13.
+We can decode the message by running rot13 on it again.
+
+I feel like this is a good place to store all my secure flags.
+Infact, here's the flag: rot_13_isnt_secure

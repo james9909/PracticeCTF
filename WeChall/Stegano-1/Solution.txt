@@ -1,0 +1,3 @@
+Performing strings (or hexdump, or whatever to view the hex) on the bitmap reveals the secret password.
+
+Password: steganoI

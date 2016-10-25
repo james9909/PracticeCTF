@@ -1,0 +1,6 @@
+If we compare the 'evil' version of openssl to the original version, we find that the
+hacker modified the openssl authorization. Using a comparison software such as
+Beyond Compare, we can see that some things have been added to auth.c.
+Namely, the program now determines if memfrob is equal to the password. A quick google
+search shows that memfrob xor's each value of a string with 42. Xor-ing this string with
+42 will give us the password to jon's server. Log into his server and cat flag.txt

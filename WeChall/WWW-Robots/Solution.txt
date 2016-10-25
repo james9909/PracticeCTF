@@ -1,0 +1,4 @@
+Immediately I knew to go to the robots.txt file where there is a path to a page that
+seems to be suspicious. Going to said page will pass us the level.
+
+    http://www.wechall.net/challenge/training/www/robots/T0PS3CR3T

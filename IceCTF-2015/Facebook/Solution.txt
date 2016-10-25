@@ -1,0 +1,4 @@
+The flag is in the about section of the Facebook page linked to us.
+https://www.facebook.com/icectf/info?tab=page_info
+
+The flag is flag_why_hide_stuff_on_facebook

@@ -1,0 +1,19 @@
+More javascript!
+
+<script type='text/javascript'>
+    var thecode = 'code123';
+    $(function(){
+        $('.level-form').submit(function(e){
+            e.preventDefault();
+            if ($('.level-form #pass')[0].value == thecode) {
+                document.location = "?pass=" + thecode;
+            } else {
+                alert('Incorrect Password');
+            }
+        });
+    });
+</script>
+
+Another simple javascript problem. Print out the value of thecode and input that as the password.
+
+Password: getinthere

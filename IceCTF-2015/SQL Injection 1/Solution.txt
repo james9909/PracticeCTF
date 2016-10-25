@@ -1,0 +1,4 @@
+Since this is a simple SQL injection, we can assume that the basic 'OR 1=1 -- works.
+It does, and we get the flag.
+
+The flag is flag_these_kinds_of_injections_arent_scary_right

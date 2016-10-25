@@ -1,0 +1,13 @@
+The interactive console is really useful for this problem.
+
+What we want to do is change 'not_the_flag.txt' to 'flag.txt', so that we can read
+the flag. What we first need to do is set our argument to begin with 1337_P455W0RD.
+Then, we need to find the address of flag.txt. We know the address of not_the_flag.txt, and playing
+around with the values shows that the address of flag.txt is 0x0804877f. So, we need to set
+file_name to 0804877f. In the interactive console, we can see that after adding in the actual password,
+there are still 3 more bytes that need to be written to before we can overflow file_name.
+If we set these 3 bytes to \x00, we don't change the value of the password, and we get to
+overflow.
+The final payload is
+
+    printf "1337_P455W0RD\x00\x00\x00\x7f\x78\x04\x08" | ./what_the_flag
