@@ -1,0 +1,16 @@
+Running 'binwalk' on the given image, we find that the file contains 2 pngs.
+
+$ binwalk google.png
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 1005 x 485, 8-bit/color RGBA, non-interlaced
+216595        0x34E13         PNG image, 101 x 26, 8-bit/color RGBA, non-interlaced
+
+We can use dd to extract the image.
+
+$ dd if=google.png of=extracted.png bs=1 skil=216595
+543+0 records in
+543+0 records out
+543 bytes (543 B) copied, 0.00215734 s, 252 kB/s
+
+{i_c4n_c4rv3}

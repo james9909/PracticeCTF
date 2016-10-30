@@ -1,0 +1,3 @@
+$ strings java1.class
+
+{much_difficult_java_not_really}

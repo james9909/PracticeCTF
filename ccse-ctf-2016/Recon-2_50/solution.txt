@@ -1,0 +1,4 @@
+Looking on the CAMSCSC YouTube channel, we find a video labeled "Intro to Linux" (https://www.youtube.com/watch?v=b7oe7_xgFRc).
+In the description, we find the flag.
+
+{gnU+L1nuX_f0r_lyfe}

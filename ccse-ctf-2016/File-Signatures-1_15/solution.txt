@@ -1,0 +1,6 @@
+Running 'file' on the image reveals that it is a png.
+
+$ file filesig_1
+filesig_1: PNG image data, 176 x 55, 8-bit/color RGBA, non-interlaced
+
+{th1s_15_th3_fl4g}

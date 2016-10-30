@@ -1,0 +1,4 @@
+We can edit one of the inputs using inspect element to change its value to anything over 9000.
+
+Submitting the form gives us the flag:
+{it's_0v3r_9000!}

@@ -1,0 +1,3 @@
+Running 'strings' on the file, we get the flag:
+
+{after_the_EOF_lolz}

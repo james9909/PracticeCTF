@@ -1,0 +1,5 @@
+Using chrome dev tools, we can look at the resources being loaded by the web page, one of them being an image:
+
+http://web.camscsc.org/2-kbpk/aevczflagwoc.png
+
+{unblur_th3_csS}

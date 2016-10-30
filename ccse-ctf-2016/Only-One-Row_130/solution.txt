@@ -1,0 +1,6 @@
+We want to get the data from the admin user, but we can't just simply query "admin", since it checks to see if the
+inputted username is "admin". Instead, we can use UNION to select whatever we want.
+
+' UNION SELECT * FROM data WHERE user = 'admin' --
+
+8K8$@3pXzJY~y$EB

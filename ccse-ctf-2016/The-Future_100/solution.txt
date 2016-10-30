@@ -1,0 +1,55 @@
+Looking at the source code, we see that 3 numbers are generated and put into our session, which we can modify.
+
+The numbers are generated from a seed based on the time, which we can brute foce easily.
+
+$ curl -c cookie.txt http://web.camscsc.org/5-arvo/ -v
+
+*   Trying 104.236.130.144...
+* Connected to web.camscsc.org (104.236.130.144) port 80 (#0)
+> GET /5-arvo/ HTTP/1.1
+> Host: web.camscsc.org
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Wed, 26 Oct 2016 05:24:27 GMT
+< Server: Apache/2.4.7 (Ubuntu)
+< X-Powered-By: PHP/5.5.9-1ubuntu4.14
+* Added cookie PHPSESSID="1cd2ardk8mkn08e0hj95c39sm1" for domain web.camscsc.org, path /, expire 0
+< Set-Cookie: PHPSESSID=1cd2ardk8mkn08e0hj95c39sm1; path=/
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+< Pragma: no-cache
+< Vary: Accept-Encoding
+< Content-Length: 674
+< Content-Type: text/html
+<
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+		<title>Web Exploitation</title>
+	</head>
+
+	<body>
+		<p>I need you to predict the future. I have generated the following two numbers: 391220580, 1623213537. Predict what random number I will generate next. - D1rect0r Troll</p>
+		<form method="post" action="">
+			<p>Your guess: </p>
+			<input type="text" name="guess">
+			<br>
+			<button type="submit" style="margin-top:20px">Submit</button>
+		</form>
+
+		<br>
+			</body>
+</html>
+
+* Connection #0 to host web.camscsc.org left intact
+<!-- Source: source.php -->%
+
+The epoch time stamp is 141477459467, and the first number we want is 39391220580.
+
+solution.php contains the brute forcing code.
+
+{i_CAN_pred1ct_da_futur3}

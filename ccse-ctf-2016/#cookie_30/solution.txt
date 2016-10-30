@@ -1,0 +1,2 @@
+Changing the value of the "authorized" cookie from 0 to 1 gives us the flag:
+{#crunchy_cookiez}

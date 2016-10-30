@@ -1,0 +1,12 @@
+If we try to register, we are brought to a page that tells us that our user hasn't been saved to the database.
+We also find a comment that tell us that /source.zip contains the source code of the website.
+
+Unzipping the archive, we see 3 files: class.php, create.php, and index.php.
+In class.php, we find a class called "ReadFlag", and in index.php, we see that a php object is being deserialized from a cookie.
+
+This is known as PHP Object Injection, where we can inject arbitrary objects into a php script.
+Running serialize.php, we get back the serialized version of the ReadFlag object we want.
+
+Viewing the web page with our cookie set to that string, we can see the flag:
+
+{0bj3cT_injection_mcuh_fun}

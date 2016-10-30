@@ -1,0 +1,6 @@
+Looking at the web page, we can see bytes that resemble information contained within a jpg. (e.g. JFIF)
+Running binwalk also confirms this hypothesis, and we can extract the jpg using dd.
+
+$ dd if=out of=extracted.jpg bs=1 skip=199 count=57929
+
+{th1s_happenz_in_wordpresz}

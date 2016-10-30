@@ -1,0 +1,5 @@
+$ zbarimg qrchal1.png
+QR-Code:this_1s_easy_1sh
+scanned 1 barcode symbols from 1 images in 0.05 seconds
+
+this_1s_easy_1sh

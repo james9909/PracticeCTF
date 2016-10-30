@@ -1,0 +1,6 @@
+The server checks to see if we inputted "administrator", and will reject our query. However, we can
+bypass this with a little bit of sql injection.
+
+administrator' --
+
+{injection_ftw_1337}

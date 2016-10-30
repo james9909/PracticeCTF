@@ -1,0 +1,3 @@
+This is blind SQL injection, so we'll let sqlmap take care of the process.
+
+The password for 'admin' is l9DL1Osued3e4anFHnmH

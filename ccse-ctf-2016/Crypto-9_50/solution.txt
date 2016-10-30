@@ -1,0 +1,3 @@
+Decrypt the ciphertext using the vigenere cipher with the key "ccse".
+
+{my_tableau_is_too_large}

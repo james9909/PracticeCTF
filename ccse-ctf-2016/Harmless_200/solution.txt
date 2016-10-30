@@ -1,0 +1,7 @@
+The website is also vulnerable to SQL injection, and we presumably want to get the password for the 'admin' user.
+
+With a simple UNION statement, we can query the password of the admin user.
+
+' UNION SELECT password from users where username = 'admin' --
+
+r9AxlSCtfFtuGxr6v875

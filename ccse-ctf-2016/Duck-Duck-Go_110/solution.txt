@@ -1,0 +1,4 @@
+All we need to do is spoof our HTTP referer in our request, something we can easily do with curl.
+
+$ curl -e https://duckduckgo.com http://web.camscsc.org/18-camr/
+{HTTP_referer_is_misspelled_lol_rfc}

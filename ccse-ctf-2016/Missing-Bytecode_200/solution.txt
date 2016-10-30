@@ -1,0 +1,35 @@
+We can reconstruct the correct bytecode by using "javap" on the class file.
+
+$ javac Machinecode.java
+$ javap -c Machinecode
+Compiled from "Machinecode.java"
+public class machinecode.Machinecode {
+  public machinecode.Machinecode();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: iload_1
+       3: bipush        99
+       5: if_icmpge     29
+       8: iload_1
+       9: iconst_3
+      10: irem
+      11: ifne          23
+      14: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      17: aload_0
+      18: iconst_0
+      19: aaload
+      20: invokevirtual #3                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      23: iinc          1, 1
+      26: goto          2
+      29: return
+}
+
+The missing instruction before "getstatic #2" is "ifne 23"
+ifne 23

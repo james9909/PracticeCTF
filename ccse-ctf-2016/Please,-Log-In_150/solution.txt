@@ -1,0 +1,6 @@
+All we need to do is ensure that our query returns one row. We can do this in SQL by appending "LIMIT 1" to our
+query:
+
+' OR 1=1 LIMIT 1 --
+
+{_it's_sad_but_some_sites_are_vulnerable_like_dis}

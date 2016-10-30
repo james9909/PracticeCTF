@@ -1,0 +1,4 @@
+Looking at scripts.js, we find a function called checkPass, which checks to see if our input is equal to "migvmhbamgucerlj".
+Inputting that as the password gives us the flag:
+
+{cl13n7_51d3_15_7h3_b357_51d3}
