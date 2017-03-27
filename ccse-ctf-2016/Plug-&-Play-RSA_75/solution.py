@@ -8,8 +8,10 @@ q = 2295782035886409121799876810984786026144067511904018840862463797635128365911
 
 n = p*q
 
-print hex(d)[2:-1]
 c = int(c.encode("hex"), 16)
 
 m = pow(c, d, n)
-print hex(m)[2:-1].decode("hex")
+m = "0" + hex(m)[2:-1]
+print m.decode("hex")
+
+# {i<3rsa_but_d0_u?}
