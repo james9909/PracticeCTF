@@ -1,0 +1,22 @@
+Running `binwalk` on the image, we find the following:
+
+$ binwalk hekkerman.jpg
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard  1.01
+30            0x1E            TIFF image data, little-endian
+212           0xD4            JPEG image data, JFIF standard  1.01
+242           0xF2            TIFF image data, big-endian
+414           0x19E           JPEG image data, JFIF standard  1.01
+444           0x1BC           TIFF image data, big-endian
+28428         0x6F0C          Copyright string: " International Color Consortium, 2009, 2009"
+
+Here, we find 2 images hidden within the first image, which we can extract with dd.
+
+$ dd if=hekkerman.jpg of=extracted.jpg bs=1 skip=212
+$ dd if=hekkerman.jpg of=extracted2.jpg skip=414 bs=1
+
+The flag can be found in extracted2.jpg
+
+easyctf{d33p_zo0m_HeKker_2c1ae5}

@@ -1,0 +1,2 @@
+Run `strings` on the given binary to get the flag:
+easyctf{1u7FwVWgTaOGHE}

@@ -1,0 +1,23 @@
+Looking at the code, we see that it multiplies together a bunch of primes raised to a variable power
+which is related to jkx.
+
+We can use http://factordb.com to determine the factors of the number, which are:
+
+[2^3, 3^5, 5, 7^4, 11^7, 17^8, 19, 23^5, 29^2, 31^4, 41, 43^7, 53^4, 59^2, 61^7, 71^9, 79^7, 83^6, 97^6, 101^4, 103^8, 107, 113^7 ,127^8, 131^2, 137^5, 139^8, 149, 151^8, 163^6]
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163]
+
+This means that at the time of calculation, jkx is 35147081524017042709076064810782581806
+
+but at the beginning of the program, this portion is run:
+
+jkx = 0 # REDACTED
+pork = ((12*jkx+44)/4)-(1234/617)*jkx-12
+jkx *= pork
+
+which simplifies to
+jkx = 0
+jkx *= jkx-1
+
+This means that jkx(jkx-1) = 35147081524017042709076064810782581806.
+
+jkx = 5928497408620251958

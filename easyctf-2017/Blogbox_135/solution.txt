@@ -1,0 +1,18 @@
+Poking around the website, there doesn't seem to be anything suspicious, and the search query
+doesn't seem vulnerable to SQL injection. The key to solving the problem is noticing that
+the hint says
+
+    Use the search bar to see all the public posts! (And only the public posts!)
+
+Looking at the format of the url when submitting a search, we see that it uses a GET parameter to
+retrieve the search query. Since by default we're only allowed to see the public posts, we can try
+setting the parameter "public" to false to see the private posts.
+
+We can confirm our suspicions by searching for "flag" with and without the public parameter and noticing that
+private query doesn't return any results. Now, we only need to find the search query that will give us the flag.
+
+The flag can be found at http://blogbox.web.easyctf.com/search?query=easyctf&public=false
+
+I was searching around for stuff today! I found this super cool string. Whatcha think? easyctf{i_cant_GET_n0_s@tisfAct10N}
+
+easyctf{i_cant_GET_n0_s@tisfAct10N}

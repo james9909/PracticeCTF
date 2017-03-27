@@ -1,0 +1,7 @@
+Upon visiting the website, we are greeted with a simple website without much information.
+However, the name of the problem suggests that we are dealing with cookies, and if we look at
+our cookies on the page, we find the url-encoded version of the flag:
+easyctf%7Byum_c00kies%21%21%21%7D
+
+Decoding that will give us the actual flag:
+easyctf{yum_c00kies!!!}

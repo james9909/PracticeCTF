@@ -1,0 +1,3 @@
+Visit the IRC channel and view the topic to get the flag:
+
+easyctf{irc_d0esn7_apist0rm_:)}

@@ -1,0 +1,9 @@
+Visiting http://edge1.web.easyctf.com/.git, we find that the git metadata is exposed to the public.
+
+We can download it all by running
+$ wget -r http://edge1.web.easyctf.com/.git
+
+Looking at the log, we find that the most recent commit (ee9061b25d8a35bae8380339f187b44dc26f4999) removed the flag.
+$ git diff HEAD~
+
+easyctf{w3_ev3n_u53_git}

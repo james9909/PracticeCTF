@@ -1,0 +1,14 @@
+Unzipping the archive, we find inside a bunch of flags from different countries, and a Thumbs.db file.
+
+We can extract the Thumbs.db file by running:
+$ 7z x Thumbs.db
+
+Looking at the headers of the all the files extracted, we find that there are 24 bytes of useless
+junk before the actual first byte of the image. We can get rid of all by running:
+
+$ for file in *; do xxd -s24 -p "$file" | xxd -r -p > "$file.jpg"; done
+
+One of the images is actually a QR code, so we can scan it by running:
+$ zbarimg *.jpg
+
+easyctf{thumbs.db_c4n_b3_useful}

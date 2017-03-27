@@ -1,0 +1,5 @@
+$ strings lion.jpg | grep easyctf
+
+easyctf{pride_in_african_engin33ring}
+
+Alternatively, you could have checked the image metadata using a tool such as `exiftool`.

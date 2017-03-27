@@ -1,0 +1,12 @@
+The server seems to limit users to queries less than or equal to 11 characters in length.
+
+The hint asks us how we can eval in as few characters as possible, and luckily for us, PHP has a
+execution operator (`) that will allow us to execute commands.
+
+Inputting "echo `ls`" tells us that there is a flag file that needs to be read, but the file name is too long
+We can get around this by viewing all the files in the directory using wildcard expansion.
+
+The final payload is:
+echo`cat *`
+
+easyctf{it's_2017_anD_we're_still_using_PHP???}

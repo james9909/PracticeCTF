@@ -1,0 +1,1 @@
+Input a string with 25 characters or more

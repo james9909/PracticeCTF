@@ -1,0 +1,10 @@
+We are given an encrypted string "Nwh whdjwh qm uepen, T tjb fsmt tixgi jsrsh sigm gs mpzp xwqf iahxpv iw fslkt. pehgpxf{qtextz_glacz_elt_neinrw_qsg_bums_dcp}"
+
+which was actually encrypted with the vigenere cipher. Using an automated tool (http://www.mygeocachingprofile.com/codebreaker.vigenerecipher.aspx), we can come up with many possible
+candidate keys:
+
+Looking at the candidates, we can guess that the key was "pineapple"
+
+"you should be happy, i put some extra words here to make this easier to solve. easyctf{better_thank_the_french_for_this_one}"
+
+easyctf{better_thank_the_french_for_this_one}

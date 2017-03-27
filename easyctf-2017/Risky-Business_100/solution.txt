@@ -1,0 +1,12 @@
+The casino never checks to see if we are betting more money than we have, so we can cause an integer underflow
+if we can get our balance to below -2147483648. We can achieve this by repeatedly betting $100,000,000.
+
+Your net worth is: $-2141199877
+Please enter how much you would like to bet:
+100000000
+Sorry, I'm afraid you've lost :(
+
+Your net worth is: $2053767419
+Welcome to our exclusive club!
+Here's our special flag:
+easyctf{m4by3_w3_c0u1d_h4v3_d0n3_th47_b3t7er}

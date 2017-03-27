@@ -1,0 +1,28 @@
+Disassembling the binary tell us that it gives us 22 tries to guess a random number. We can't
+do a binary search for the number, so we'll have to try something else.
+
+Part of the main function looks like this:
+gdb-peda$ disass main
+    ...
+    0x0000000000400b33 <+59>:    call   0x400920 <rand@plt>
+    0x0000000000400b38 <+64>:    cdq
+    0x0000000000400b39 <+65>:    shr    edx,0x6
+    0x0000000000400b3c <+68>:    add    eax,edx
+    0x0000000000400b3e <+70>:    and    eax,0x3ffffff
+    0x0000000000400b43 <+75>:    sub    eax,edx
+    0x0000000000400b45 <+77>:    mov    DWORD PTR [rbp-0x94],eax
+    ...
+
+At 0x0000000000400b33, the random number is generated, and at 0x0000000000400b45, that number
+is moved to $eax. Now all we need to do is break at that point and print out the value of $eax,
+which will be the number we need to input.
+
+gdb-peda$ break *0x0000000000400b45
+Breakpoint 1 at 0x400b45
+gdb-peda$ p $eax
+$1 = 0x826f64
+gdb-peda$ c
+Continuing.
+Guess? 8548196
+
+easyctf{aaA_tOucH_0f_luccK_47ca4e}

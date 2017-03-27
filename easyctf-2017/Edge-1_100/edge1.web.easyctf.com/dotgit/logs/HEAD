@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 15ca375e54f056a576905b41a417b413c57df6eb root <root@dfc2eabdf236.(none)> 1455532500 +0000	clone: from https://github.com/fermayo/hello-world-lamp.git
+15ca375e54f056a576905b41a417b413c57df6eb afdf86202dc8a3c3d671f2106d5cffa593f2b320 Michael <michael@easyctf.com> 1489389105 +0000	commit: Initial.
+afdf86202dc8a3c3d671f2106d5cffa593f2b320 ee9061b25d8a35bae8380339f187b44dc26f4999 Michael <michael@easyctf.com> 1489389107 +0000	commit: Whoops! Remove flag.

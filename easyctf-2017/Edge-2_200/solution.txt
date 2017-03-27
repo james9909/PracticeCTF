@@ -1,0 +1,21 @@
+Just like the last problem, the website uses git, but this time /.git forbidden.
+However, the actual files are still available to be downloaded, so as long as we
+know what we're looking for, we can reconstruct the repository.
+This can be proved by visiting http://edge2.web.easyctf.com/.git/index,
+
+We can download the basic files that all git repositories have to get a basic idea of what the repository looks like.
+See git_init.sh
+
+However, we need more information to actually reconstruct the repository.
+
+In order to actually retrieve the files and blobs, you need to know a little bit about how git stores them.
+Git stores objects within the objects folder, and assigns a folder name and file based on the object's hash. For example, if the hash of a blob was
+aa3025bdb15120ad0a2558246402119ce11f4e2e, the object would be located at .git/objects/aa/3025bdb15120ad0a2558246402119ce11f4e2e.
+Knowing this, we simply need to find the hashes of the various files. We can do so via the command "git fsck"
+This command verifies the objects in the work tree, but we don't have any objects within our objects folder, so it'll tell us what is missing.
+Using get_object.sh, we can grab the object based on its hash from the server. Simply grab whatever git fsck
+says is missing. Eventually, enough objects will be restored for the log to become viewable
+
+$ git diff HEAD~2
+
+easyctf{hiding_the_problem_doesn't_mean_it's_gone!}

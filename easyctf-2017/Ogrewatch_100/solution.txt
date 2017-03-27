@@ -1,0 +1,35 @@
+Running `file` on the given file tells us that it is an mkv, a video format.
+To find out more information about this particular mkv, we can run the `mkvinfo` command.
+
+$ mkvinfo ogrewatch
+...
+| + A track
+|  + Track number: 2 (track ID for mkvmerge & mkvextract: 1)
+|  + Track UID: 2
+|  + Lacing flag: 0
+|  + Name: Stereo
+|  + Language: und
+|  + Codec ID: A_AAC
+|  + Track type: audio
+|  + Audio track
+|   + Channels: 2
+|   + Sampling frequency: 44100
+|  + CodecPrivate, length 5
+| + A track
+|  + Track number: 3 (track ID for mkvmerge & mkvextract: 2)
+|  + Track UID: 3
+|  + Lacing flag: 0
+|  + Language: eng
+|  + Default flag: 0
+|  + Codec ID: S_TEXT/ASS
+|  + Track type: subtitles
+|  + CodecPrivate, length 481
+...
+
+The mkv comes with subtitles, which we can extract by running `mkvextract`. The second
+set of subtitles, which are in English, look the most interesting, so let's try extracting those.
+
+$ mkvextract tracks ogreman_repaired 2:subtitles.txt
+
+Opening subtitles.txt, we find the flag:
+easyctf{subs_r_b3tt3r_th@n_dub5}

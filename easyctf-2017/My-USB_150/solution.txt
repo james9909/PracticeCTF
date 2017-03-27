@@ -1,0 +1,4 @@
+Using `testdisk`, we can easily retrieve files from the image without having to deal with any mounting.
+There are a few random files, but all we care about is 234-823412857.jpg. Open it up for the flag:
+
+flag{d3let3d_f1l3z_r_k00l}
