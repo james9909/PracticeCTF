@@ -1,0 +1,8 @@
+Using a decompiler, we can generate some pseudocode for the binary.
+
+Looking through the pseudocode, we find that the program will accept any key
+that's 12 characters long and has an ascii value sum of 1337.
+
+The string 'ooooooooooot' fulfills these requirements, although it is not the only one.
+
+ooooooooooot

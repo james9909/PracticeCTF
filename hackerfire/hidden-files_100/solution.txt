@@ -1,0 +1,10 @@
+Running `binwalk` on the png shows us that there is an embedded ZIP file, which we can extract.
+
+$ unzip secrets.jpg
+Archive:  secrets.jpg
+warning [secrets.jpg]:  23256 extra bytes at beginning or within zipfile
+  (attempting to process anyway)
+  inflating: flag.png
+
+The flag is in the extracted image:
+flag{the_crocodiles_attack_at_dawn}

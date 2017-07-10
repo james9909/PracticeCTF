@@ -1,0 +1,21 @@
+This problem builds off the last problem in that you need to retrive a password from a user
+in the database. Like the previous problem, we can get a list of all the tables by sending the following
+query:
+
+' UNION SELECT table_name, table_name, table_name from information_schema.tables --
+
+As expected, there is a users table that we need to query.
+However, we can't just select everything from the users table, since the number of columns do not match.
+
+Thus, we need to know the names of the columns in the users table.
+Similar to information_schema.tables, we can query information_schema.columns for all the columns in the database
+that belong to the table "users".
+
+' UNION SELECT column_name, column_name, column_name from information_schema.columns where table_name = "users" --
+
+Now we know that there are 5 columns: id, username, password, name, and description. Pretty basic.
+
+Our final query is
+' UNION SELECT id, username, password from users --
+
+The admin user's password is flag{pa55w0rd5_ar3_b1g_s3cr3t5}

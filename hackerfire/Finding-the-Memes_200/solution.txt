@@ -1,0 +1,20 @@
+In order to solve this problem, we need to understand how metadata is stored in mysql and how to perform a UNION
+query.
+
+Essentially, a UNION query allows to retrieve data from another table, but we need the number of columns returned in the union
+to match the number of columns returned in the original query.
+
+' UNION SELECT 1 --       # Triggers an error
+' UNION SELECT 1, 1 --    # Triggers an error
+' UNION SELECT 1, 1, 1 -- # Success!
+
+From this, we know that we need to return 3 columns in our union query.
+Next, we need to retrieve the names of all the tables in the database. We can do this by
+querying table_name attributes for all the rows in the information_schema.tables table.
+Remember that we need to return 3 columns in our union query, which we can do by returning table_name 3 times.
+
+The final payload is
+' UNION SELECT table_name, table_name, table_name from information_schema.tables --
+
+All the way at the bottom, we find the flag:
+flag{w3lc0me_t0_th3_m3m3side}

@@ -1,0 +1,15 @@
+This time, we need to figure out the correct input to the binary, and inspecting the
+disassembly we find the following:
+
+$ objdump -d passcode
+...
+ 804856d:       e8 8e fe ff ff          call   8048400 <atoi@plt>
+ 8048572:       83 c4 10                add    $0x10,%esp
+ 8048575:       3d 37 13 37 13          cmp    $0x13371337,%eax
+ 804857a:       75 12                   jne    804858e <main+0x73>
+...
+
+From this, we know that the program is converting our input into a number and comparing it to 0x13371337.
+The decimal equivalent of 0x13371337 is 322376503, which is our flag.
+
+322376503

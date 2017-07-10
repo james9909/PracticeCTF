@@ -1,0 +1,11 @@
+Again, we use wireshark to view the traffic captured in the pcap.
+The problem asks us to find the password used to log into a forum over HTTP, so we
+can begin by searching for "login". Sure enough, there is a packet that sends
+data to /forums/login.php?do=login
+
+Inspecting the form data, we find the following:
+vb_login_username=NotOrc&vb_login_password=Checkers86%21&s=&securitytoken=guest&do=login&vb_login_md5password=&vb_login_md5password_utf=HTTP/1.1 200 OK
+
+The password appears to be Checkers86%21, but it's urlencoded, and %21 translates to "!"
+
+The flag is Checkers86!

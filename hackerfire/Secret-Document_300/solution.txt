@@ -1,0 +1,7 @@
+Using wireshark, we can see that the traffic is from FTP, and the user is requesting to download
+several files. Looking through the files being requested, we find a packet where
+the users requests the file "the secret document.pdf"
+
+From the following packet, packet #438, we can dump the contents of the pdf and view the flag:
+
+flag{what_happens_next_will_surprise_you}

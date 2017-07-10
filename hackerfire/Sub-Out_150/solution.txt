@@ -1,0 +1,3 @@
+Plug the ciphertext into an online subsitution solver such as quippiuq to decode it.
+
+The flag is "they all lived happily ever after"

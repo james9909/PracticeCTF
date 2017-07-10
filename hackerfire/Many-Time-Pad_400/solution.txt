@@ -1,0 +1,22 @@
+Using cribdrag, we can slowly guess the words that make up the key and each of the messages.
+We can start off by guessing that the key starts with "flag{", and complete the words in each message to
+continue building the key.
+
+It turns out that the encrypted strings are from "The Grand Old Duke of York" (https://en.wikipedia.org/wiki/The_Grand_Old_Duke_of_York),
+and knowing that we can acquire the key:
+
+$ ./cribdrag.py 29044d472f1c0d4538161405017f0b0301532a1a1f3a4b0109570600061b51
+Your message is currently:
+0       _______________________________
+Your key is currently:
+0       _______________________________
+Please enter your crib: Oh, The grand old Duke of York,
+0: "flag{the_duke_doesnot_know_otp}"
+Enter the correct position, 'none' for no match, or 'end' to quit: 0
+Is this crib part of the message or key? Please enter 'message' or 'key': message
+Your message is currently:
+0       Oh, The grand old Duke of York,
+Your key is currently:
+0       flag{the_duke_doesnot_know_otp}
+
+flag{the_duke_doesnot_know_otp}

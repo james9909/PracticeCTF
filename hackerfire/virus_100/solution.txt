@@ -1,0 +1,10 @@
+The first thing we should do is fire up wireshark to examine the traffic.
+There is a lot of packets from telnet being passed around, which also includes the password
+we need to retrieve.
+
+We can use wireshark to dump the raw data from the TCP stream, which contains a lot of ansi escape codes
+for color, which makes it slightly annoying to read. However, we can run `cat` on the dumped file
+which will render the colors for us and make things more readable
+
+Looking through the dump, we find that the password:
+SW33t_D1SP0S1T10N

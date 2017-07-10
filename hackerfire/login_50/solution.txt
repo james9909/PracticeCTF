@@ -1,0 +1,4 @@
+The flag is hidden in plaintext in the binary, so we can easily search for it using `strings` and `grep`.
+
+$ strings login | grep flag
+flag{reverse_engineers_see_everything}

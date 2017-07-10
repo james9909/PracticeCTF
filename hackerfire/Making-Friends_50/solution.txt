@@ -1,0 +1,7 @@
+The challenge asks us to perform an SQL injection in order to get the flag, but all you really
+need to do is cause an error.
+
+Using single quotes as the name and description on the Be My Friend page, we trigger an error
+and get the flag:
+
+flag{g3uss_w3_n0t_fri3nds}

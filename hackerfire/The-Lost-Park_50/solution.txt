@@ -1,0 +1,17 @@
+This problem is actually more of a recon problem than a forensics problem. Ew.
+
+Anyways, performing a reverse image search on Google doesn't yield any results, so we need
+to take a look at the image's metadata
+
+$ exiftool statue.jpg
+...
+City                            : New York City
+Province-State                  : New York
+Country-Primary Location Name   : Major Mark Park
+...
+
+From this, we know that the statue is Major Mark Park in NYC.
+A quick Google search reveals the following monument: https://www.nycgovparks.org/parks/major-mark-park/monuments/1464
+The statues look the same, so we know that we found the right one.
+
+The name of the statue is Soldiers and Sailors Monument

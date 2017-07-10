@@ -1,0 +1,7 @@
+This is the first challenge that actually requires an SQL injection, so we try the most basic query:
+' OR 1=1 --
+
+You can learn more about that here: https://en.wikipedia.org/wiki/SQL_injection
+
+This reveals a new result which reveals the flag:
+flag{1_c4n_s3e_y0ur_ev3ry_m0v3}

