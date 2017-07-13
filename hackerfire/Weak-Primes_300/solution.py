@@ -1,16 +1,28 @@
-def decrypt_RSA(privkey, message):
-    from Crypto.PublicKey import RSA
-    from Crypto.Cipher import PKCS1_OAEP
-    from base64 import b64decode
-    key = open(privkey, "r").read()
-    rsakey = RSA.importKey(key)
-    decrypted = rsakey.decrypt(message)
-    return decrypted
+def egcd(a, b):
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, y, x = egcd(b % a, a)
+    return (g, x - (b // a) * y, y)
+
+def modinv(a, m):
+    g, x, y = egcd(a, m)
+    if g != 1:
+        raise Exception('modular inverse does not exist')
+    else:
+        return x % m
+
+e = 65537
+p = 335445381412686320307419854821396116851
+q = 208032399874738495835162222153730872959
 
 enc = open("flag.txt", "r").read()
-dec = decrypt_RSA('priv.key', enc)
-
-print dec
+enc = enc.encode("hex")
+enc = int(enc, 16)
+tot = (p-1) * (q-1)
+n = p * q
+d = modinv(e, tot)
+print hex(pow(enc, d, n))[2:-1].decode("hex")
 
 """
 The public key used in the RSA encryption is in PEM format, which we can decode with the following command:
@@ -31,10 +43,7 @@ In decimal, that's
 We can look up the factors of the modulus with factordb, and we get that the two factors are
 208032399874738495835162222153730872959 and 335445381412686320307419854821396116851.
 
-Using rsatool, we can generate the private key with the following command:
-$ python rsatool.py -p 208032399874738495835162222153730872959 -q 335445381412686320307419854821396116851 -o priv.key
-
-Finally, we have all we need to decrypt the flag
+Finally, now that we know p, q, and e, we have all we need to decrypt the flag
 
 $ python solution.py
 flag{bad_primes_are_best_primes}
