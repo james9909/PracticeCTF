@@ -1,0 +1,11 @@
+Unzipping the given file will give us a huge maze of files. Uninterestingly enough, the
+flag is in the name of one of the files. This means you could have simply run `strings` on the zip
+to get the flag without viewing its contents.
+
+$ find . | grep flag
+./PxNc/TvNkzcm/UdfV/BVoAp/yHkWSGaL/bBYy/lxANKI/hgugRa/fvgXjIbXg/OSvfOVZ/vSXzvo/FSsDewdd/NFFzMKA/flag{0h_y0u've_found_me}
+
+OR
+
+$ strings puppy.zip | grep -o "flag{.*}"
+flag{0h_y0u've_found_me}
