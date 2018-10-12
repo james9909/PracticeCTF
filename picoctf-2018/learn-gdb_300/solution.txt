@@ -1,0 +1,32 @@
+$ gdb run
+Reading symbols from run...(no debugging symbols found)...done.
+gdb-peda$ b *0x00000000004008ad
+Breakpoint 1 at 0x4008ad
+gdb-peda$ r
+Starting program: /home/james/Dev/CTF/PracticeCTF/picoctf-2018/learn-gdb_300/run
+Decrypting the Flag into global variable 'flag_buf'
+.....................................
+[----------------------------------registers-----------------------------------]
+RAX: 0x602285 --> 0x0
+RBX: 0x0
+RCX: 0xfffffffffffffff
+RDX: 0x602260 ("picoCTF{gDb_iS_sUp3r_u53fuL_9fa6c71d}")
+RSI: 0x7fffffffd861 --> 0x7fffff0032
+RDI: 0xa ('\n')
+RBP: 0x7fffffffd870 --> 0x7fffffffd890 --> 0x400920 (<__libc_csu_init>: push   r15)
+RSP: 0x7fffffffd840 --> 0x4009d0 ("Decrypting the Flag into global variable 'flag_buf'")
+RIP: 0x4008ad (<decrypt_flag+295>:      call   0x4005f0 <putchar@plt>)
+R8 : 0x7fffffffd862 --> 0x7d0000007fffff00
+R9 : 0x0
+R10: 0x7ffff7b82cc0 --> 0x2000200020002
+R11: 0x10
+R12: 0x400690 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffd970 --> 0x1
+R14: 0x0
+R15: 0x0
+EFLAGS: 0x202 (carry parity adjust zero sign trap INTERRUPT direction overflow)
+
+Using gdb, we can breakpoint at the part after the flag has been decrypted into flag_buf.
+Then we can easily view the contents of it in the register output.
+
+picoCTF{gDb_iS_sUp3r_u53fuL_9fa6c71d}

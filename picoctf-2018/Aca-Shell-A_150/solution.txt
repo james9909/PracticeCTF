@@ -1,0 +1,88 @@
+$ nc 2018shell3.picoctf.com 6903
+Sweet! We have gotten access into the system but we aren't root.
+It's some sort of restricted shell! I can't see what you are typing
+but I can see your output. I'll be here to help you along.
+If you need help, type "echo 'Help Me!'" and I'll see what I can do
+There is not much time left!
+~/$ ls
+blackmail
+executables
+passwords
+photos
+secret
+~/$ cd secret
+Now we are cookin'! Take a look around there and tell me what you find!
+~/secret$ ls
+intel_1
+intel_2
+intel_3
+intel_4
+intel_5
+profile_AipieG5Ua9aewei5ieSoh7aph
+profile_Xei2uu5suwangohceedaifohs
+profile_ahShaighaxahMooshuP1johgo
+profile_ahqueith5aekongieP4ahzugi
+profile_aik4hah9ilie9foru0Phoaph0
+profile_bah9Ech9oa4xaicohphahfaiG
+profile_ie7sheiP7su2At2ahw6iRikoe
+profile_of0Nee4laith8odaeLachoonu
+profile_poh9eij4Choophaweiwev6eev
+profile_poo3ipohGohThi9Cohverai7e
+Sabatoge them! Get rid of all their intel files!
+~/secret$ rm intel_1
+Nice! Once they are all gone, I think I can drop you a file of an exploit!
+Just type "echo 'Drop it in!' " and we can give it a whirl!
+~/secret$ echo "Drop it in!"
+Drop it in!
+I placed a file in the executables folder as it looks like the only place we can execute from!
+Run the script I wrote to have a little more impact on the system!
+~/secret$ cd ..
+~/$ cd executables
+~/executables$ ls
+dontLookHere
+~/executables$ ./dontLookHere
+ 202d a8f4 aae3 c418 0891 fe84 d57f c27d bfab 427f ea91 3769 7be7 0449 4e6e 5e71 dfce e9f2 5ed5 1f7b 17bf 3d61 8848 55a6 4635
+ 5d5d 466a 5d23 315b 2f67 b8ee 7c7c 1d68 3ecc 2608 27b9 e7f6 80fc f824 2f30 a6c3 b590 3cf9 a214 37e7 3c19 6751 7791 e60b 92d4
+ 6aa2 282a e3a3 cb85 a412 2f0a 9e5e b19c 37ee 0aba 6b64 f6ce 9b42 78fb 8070 1b5b 5c3b 976c 61c4 458a 1f0d a015 a97f 3fdd d592
+ eb5f 1586 8428 59c5 1c51 204a b07e 2140 a326 e51e 12a9 5848 503b 29eb 0a48 44dd 376c 931d 3460 0782 d0a4 bad7 c9c7 58cc 5f44
+ 5ab3 7f5d d93a 5308 3c92 9d63 50d5 25fc 3345 c7ff fe49 f9ff 8ba4 11ff 86b8 45fa 296e 59dd cc64 c5c6 65a4 0c20 f551 b3f7 a9b8
+ e9dc 216f 64a3 01e3 7c92 535e a832 9185 a4e9 0114 6cde a38c 04ba e33b 3468 97ec 59f5 4219 940d 36af d144 31a8 69bb 67a2 c1bd
+ 0634 a8c8 d076 ba5b 500c 00f0 862d 8032 55a3 4a78 0b29 baf6 646f 6089 e1e1 97cd 5e21 3d61 d6e6 0d3a 0fdc a984 f23b 767d 35d3
+ 36b9 9775 b2f4 fa57 b7c4 6a9e c6db 2c9d f04b 2f0a 7a9b eb6e f7a0 457b c870 9d29 d109 e90e 0937 4ae5 8d35 9f79 308f 4754 c01c
+ 91f6 fc4a 4eef a3ea 5df0 4c0e 9859 1e65 00fb 27f5 5da2 de1a f14d 3456 2755 b1a5 e0d6 ee6b a370 eae5 32f2 578c 19d0 698e 812b
+ 704c 138b f6f3 ded7 22be bf97 4e9e 1292 e05f 4e7f dd82 46a0 97a8 4ef3 05b4 a34a e6c1 eb6c b821 76ca 29ce b535 ed5f fdb3 466e
+ 0064 0daf 6907 510d fbb5 b4de 26d9 1e3b 8481 cc0c 7e2a 836c c951 313c 85d8 583b 59bc 4f11 9dd8 d456 bdad 1d9d 62b9 e6f3 0760
+ 5d2f b88f ac1a 8792 f6a5 e74b 5df1 25fa 6002 05cc 0822 5430 357f a734 1f87 3ef6 dcc1 80ca cff2 2df3 31e5 7852 6494 15e7 363c
+ c2a4 3a20 e9df 1457 aa50 78b4 06be a9b3 4a74 45b9 8b8e f6bf 4fec 1c53 b2c7 9e21 d94b 1037 0fda 6623 0cc3 68e1 4f11 6d74 e2ea
+ f451 8b97 b9ac 10bf 3e21 edc9 f545 b7bb d777 180f f82d d619 d86c 0ccd 40cd e4b4 8520 e550 604e 45ba 1a20 4361 2147 0d23 804a
+ 3d3f 357f 03e4 1fdf d6af 330e 6646 0d63 cc10 a9b1 e944 c96d 5239 07b6 7cab 0bea 3aa1 f7eb 1623 5452 c23b 2b22 ff4b e5f3 9fd9
+ 29ff a4ff 2ad8 5e85 cdf6 4794 206c 27e0 98cc ecc3 95f4 f0e4 7b8e 422d 248b 2b3c 980b 97d0 9065 c94d f96d e705 0488 bd2c 110f
+ 96fa d51d ed6a 60c0 3245 6ea3 75cf b043 aa22 3878 6e24 49e3 527b 0119 b4e2 8eae d6d5 0066 8a25 58f8 0f64 3dc4 f980 cc4d bdc4
+ d2d2 ae9b 23f6 2184 6259 fbc0 3449 d4da 6f95 dd3a 0f09 2216 99b6 8081 414e d596 1a75 110b 2010 6e82 c012 ff06 8df4 17f4 9ac5
+ 1a58 4469 9e1a b8d5 c9bc 8360 93a6 827b 3920 1aac d586 901e 07a3 5476 f8b4 886f 237e 1101 f493 99db 84e4 d7db 8a83 843b 4ec6
+ 2dea 6fdf ec1d d8df 2f2d 37cd 614a f39b 2fcc 30e9 c35a ea2f 3191 6377 39f1 c324 b4a3 6673 e303 f2e3 2508 109e 32f7 243f 6e06
+ 4aa6 8ab7 da87 9a9f b3a6 2bb8 c2b5 6192 5786 c0e6 f4e0 a5df eb90 e259 e49f 6f1c 1933 b188 74c2 c2ce d694 6d3e a246 4783 3231
+ 6877 25f6 f847 36a5 b5ae 98a4 2865 7e2d 74ab 29c4 ca39 a877 f5f1 9fed 70ce 30d8 a0e1 dac3 9e7f 8632 0c24 70f3 4f8d 542d 55d5
+ 76dc 3f0e 7a31 4be5 1a81 c863 c4a9 5477 67d7 b307 b954 31fb e1ad b58f 384c 1af5 afd0 9194 f882 3428 18a2 aad9 26ad fbf2 76ee
+ b4ab 9919 2301 19c5 9de6 19a4 889a 3ea9 55c7 f7ef a45b 3290 56a3 8824 ff69 c76e fe5a 0515 b0d8 f904 2753 b355 d753 b7e7 cc1f
+ 0436 5d40 fe2b 578c be18 51a4 0167 e4d6 1780 6f03 1c8d 8f3a 2ad8 13b7 2768 bab5 36bf 40a1 b768 edfc 9bf7 908c 9521 c6cc 6de7
+ 2bb8 edc5 1542 55c7 01db 28e7 a90f 3511 2e97 883a 8df9 6af1 c3cd d8f2 a8eb 9a04 36e4 c3cf dc0c 269a 2764 c12a c40b 1994 7c0f
+ 5449 2a45 8e66 5d61 1f65 0882 df22 b8c2 2421 38e3 6778 68ca b087 6d07 875b cc28 9a97 986f b397 ab4d 52c2 cf83 c443 f4cb 1029
+ 8cdf 197b 5264 94ac e1f4 650d 32fc 16a5 0b72 640f 078b c92f 4ae0 77c1 4fbd b402 1c9f dc07 820c fdb3 0f94 ca7d e712 77a5 fef5
+Looking through the text above, I think I have found the password. I am just having trouble with a username.
+Oh drats! They are onto us! We could get kicked out soon!
+Quick! Print the username to the screen so we can close are backdoor and log into the account directly!
+You have to find another way other than echo!
+~/executables$ whoami
+l33th4x0r
+Perfect! One second!
+Okay, I think I have got what we are looking for. I just need to to copy the file to a place we can read.
+Try copying the file called TopSecret in tmp directory into the passwords folder.
+~/executables$ cp /tmp/TopSecret ../passwords
+Server shutdown in 10 seconds...
+Quick! go read the file before we lose our connection!
+~/executables$ cd ..
+~/$ cd passwords
+~/passwords$ cat TopSecret
+Major General John M. Schofield's graduation address to the graduating class of 1879 at West Point is as follows: The discipline which makes the soldiers of a free country reliable in battle is not to be gained by harsh or tyrannical treatment.On the contrary, such treatment is far more likely to destroy than to make an army.It is possible to impart instruction and give commands in such a manner and such a tone of voice as to inspire in the soldier no feeling butan intense desire to obey, while the opposite manner and tone of voice cannot fail to excite strong resentment and a desire to disobey.The one mode or other of dealing with subordinates springs from a corresponding spirit in the breast of the commander.He who feels the respect which is due to others, cannot fail to inspire in them respect for himself, while he who feels,and hence manifests disrespect towards others, especially his subordinates, cannot fail to inspire hatred against himself.
+picoCTF{CrUsHeD_It_dddcec58}

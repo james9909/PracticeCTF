@@ -1,0 +1,5 @@
+Viewing the robots.txt file tells us that there's a page on the site called 65c0c.html.
+
+Visiting that page gives us the flag
+
+picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_65c0c}

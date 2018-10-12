@@ -1,0 +1,6 @@
+Using wireshark, we can analyze the form data submitted to the /admin route, with one of the passwords being the flag
+
+picoCTF{n0ts3cur3_13597b43}
+
+Alternatively, since the flag is in plaintext, it's possible to just grep for the flag directly without
+using wireshark.

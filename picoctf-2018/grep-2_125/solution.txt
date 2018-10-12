@@ -1,0 +1,2 @@
+james9909@pico-2018-shell-3:~$ grep -R "pico" /problems/grep-2_2_413a577106278d0711d28a98f4f6ac28/files
+/problems/grep-2_2_413a577106278d0711d28a98f4f6ac28/files/files5/file22:picoCTF{grep_r_and_you_will_find_8eb84049}

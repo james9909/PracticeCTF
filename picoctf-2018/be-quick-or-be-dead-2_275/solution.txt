@@ -1,0 +1,13 @@
+Looking at the program, it appears to get the key by calculating the 1015th fibonacci number.
+This is very slow, and probably won't finish in any reasonable amount of time, but we can use WolframAlpha to
+find that number:
+59288416551943338727574080408572281287377451615227988184724603969919549034666922046325034891393072356252090591628758887874047734579886068667306295291967872198822088710569576575629665781687543564318377549435421485
+
+However, this is C, so we need to overflow that value appropriately, which turns it into -783768486378814675
+
+With this, we can decrypt the flag through gdb and view it quite easily.
+
+gdb-peda$ call (int) decrypt_flag(-783768486378814675L)
+$2 = 0x39
+gdb-peda$ print (char*) &flag
+$3 = 0x601080 <flag> "picoCTF{the_fibonacci_sequence_can_be_done_fast_73e2451e}"

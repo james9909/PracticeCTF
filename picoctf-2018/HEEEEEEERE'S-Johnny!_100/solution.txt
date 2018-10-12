@@ -1,0 +1,16 @@
+We're given a passwd and shadow file, which contains a salted hash of the password for the root user.
+We can crack this using John the Ripper.
+
+$ john shadow
+Created directory: /home/james/.john
+Loaded 1 password hash (crypt, generic crypt(3) [?/64])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+password1        (root)
+1g 0:00:00:06 100% 2/3 0.1610g/s 483.8p/s 483.8c/s 483.8C/s 123456..pepper
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+
+$ nc 2018shell3.picoctf.com 40157
+Username: root
+Password: password1
+picoCTF{J0hn_1$_R1pp3d_1b25af80}

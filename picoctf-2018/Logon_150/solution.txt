@@ -1,0 +1,5 @@
+Upon logging in, we see that we have 3 cookies: username, admin, and password.
+The admin cookie is set to "False", but if we set it to "True" and refresh the page,
+we get the flag:
+
+picoCTF{l0g1ns_ar3nt_r34l_aaaaa17a}

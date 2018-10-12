@@ -1,0 +1,16 @@
+We can use ssh-copy-id to copy our ssh public key onto the server so we don't need to continuously
+input our password to authenticate
+
+$ ssh-copy-id pico2018
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/james/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+picoCTF{who_n33ds_p4ssw0rds_38dj21}
+Type your platform password and press Enter (there is no indication as you type):
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'pico2018'"
+and check to make sure that only the key(s) you wanted were added.
+
+picoCTF{who_n33ds_p4ssw0rds_38dj21}

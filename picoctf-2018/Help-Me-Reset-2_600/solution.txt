@@ -1,0 +1,15 @@
+Looking at the bottom of the page, we find comments like
+<!--Proudly maintained by reedy-->
+
+This gives us information about usernames, which we can use to reset passwords.
+
+The password reset involves getting 3 questions right, but if you get them wrong, the account
+will be "locked out". However, this doesn't actually happen on the server side, so clearing
+your cookies then trying again will work.
+
+The vulnerability lies in the fact that the questions for each stage of the password reset aren't
+necessarily unique, so if we're able to find the answer to any one question we can continuously
+refresh each stage until we get that question again. The question I chose to brute force was
+the favorite color one.
+
+picoCTF{i_thought_i_could_remember_those_a131a54c}

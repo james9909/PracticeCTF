@@ -1,0 +1,3 @@
+Using photorec, we can recover 8 files from the disk image, one of which is the flag
+
+picoCTF{th3_5n4p_happ3n3d}

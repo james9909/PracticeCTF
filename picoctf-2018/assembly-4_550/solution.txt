@@ -1,0 +1,6 @@
+We just need to compile the given .nasm file and run it to get the flag.
+
+$ nasm -f elf32 comp.nasm
+$ gcc -m32 comp.o -o comp
+$ ./comp
+picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_2418650440}

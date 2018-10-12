@@ -1,0 +1,4 @@
+The name Blaise references the Vigenere cipher, which we can use online tools to help us
+decode. Turns out the key is "gfla", which we can use to decode the flag.
+
+picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_095baccc}

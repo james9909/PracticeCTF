@@ -1,0 +1,2 @@
+The flag is located towards the bottom of the page
+picoCTF{xiexie_ni_lai_zheli}

@@ -1,0 +1,11 @@
+The program checks to see if we can view the contents of the flag by opening a file called "permissions.txt" in our current
+working directory, and checks if the contents are "yes". Since we're not allowed to make modifications to anything
+in the /problems/ folder, we can use our own home directories to place a file with the correct permissions to bypass the
+permission checks.
+
+james9909@pico-2018-shell-3:~$ echo "yes" > permission.txt
+james9909@pico-2018-shell-3:~$ cat permission.txt
+yes
+james9909@pico-2018-shell-3:~$ /problems/absolutely-relative_0_d4f0f1c47f503378c4bb81981a80a9b6/absolutely-relative
+You have the write permissions.
+picoCTF{3v3r1ng_1$_r3l3t1v3_befc0ce1}

@@ -1,0 +1,24 @@
+Looking through the binary, we basically see that the program sets a timer on itself using signals and
+only prints the flag is it performs some calculation before the timer runs out. We can bypass
+this by just running the binary through gdb, which will catch all signals.
+
+$ gdb be-quick-or-be-dead-1
+Reading symbols from be-quick-or-be-dead-1...(no debugging symbols found)...done.
+gdb-peda$ c
+The program is not being run.
+gdb-peda$ r
+Starting program: /home/james/Dev/CTF/PracticeCTF/picoctf-2018/be-quick-or-be-dead-1_200/be-quick-or-be-dead-1
+Be Quick Or Be Dead 1
+=====================
+
+Calculating key...
+
+Program received signal SIGALRM, Alarm clock.
+Done calculating key
+Printing flag:
+picoCTF{why_bother_doing_unnecessary_computation_27f28e71}
+[Inferior 1 (process 12089) exited normally]
+Warning: not running or target is remote
+gdb-peda$ quit
+
+picoCTF{why_bother_doing_unnecessary_computation_27f28e71}

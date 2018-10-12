@@ -1,0 +1,5 @@
+The vulnerability here lies in the "Create Card" functionality, where the question names are vulnerable
+to jinja template injection. If we name one of our questions "{{ config }}", we find
+the value of the SECRET_KEY, which is the flag:
+
+picoCTF{secret_keys_to_the_kingdom_584f8327}

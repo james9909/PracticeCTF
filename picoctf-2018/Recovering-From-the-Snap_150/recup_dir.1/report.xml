@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dfxml xmloutputversion='1.0'>
+  <metadata 
+  xmlns='http://www.forensicswiki.org/wiki/Category:Digital_Forensics_XML' 
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+  xmlns:dc='http://purl.org/dc/elements/1.1/'>
+    <dc:type>Carve Report</dc:type>
+  </metadata>
+  <creator>
+    <package>PhotoRec</package>
+    <version>7.0</version>
+    <build_environment>
+      <compiler>GCC 7.2</compiler>
+      <library name='libext2fs' version='1.44.1'/>
+      <library name='libewf' version='none'/>
+      <library name='libjpeg' version='libjpeg-turbo-1.5.2'/>
+      <library name='libntfs' version='libntfs-3g'/>
+    </build_environment>
+    <execution_environment>
+      <os_sysname>Linux</os_sysname>
+      <os_release>4.15.0-34-generic</os_release>
+      <os_version>#37-Ubuntu SMP Mon Aug 27 15:21:48 UTC 2018</os_version>
+      <host>mint</host>
+      <arch>x86_64</arch>
+      <uid>1000</uid>
+      <start_time>2018-10-04T13:46:31-0500</start_time>
+    </execution_environment>
+  </creator>
+  <source>
+    <image_filename>animals.dd</image_filename>
+    <sectorsize>512</sectorsize>
+    <image_size>10485760</image_size>
+    <volume>
+      <byte_runs>
+        <byte_run offset='0' img_offset='0' len='10485760'/>
+      </byte_runs>
+      <block_size>2048</block_size>
+    </volume>
+  </source>
+  <configuration>
+  </configuration>
+  <fileobject>
+    <filename>f0000077.jpg</filename>
+    <filesize>632333</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='39424' len='632832'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0001313.jpg</filename>
+    <filesize>493564</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='672256' len='493568'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0002277.jpg</filename>
+    <filesize>389187</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='1165824' len='391168'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0003041.jpg</filename>
+    <filesize>254837</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='1556992' len='256000'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0003541.jpg</filename>
+    <filesize>321758</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='1812992' len='323584'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0004173.jpg</filename>
+    <filesize>469105</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='2136576' len='471040'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0005093.jpg</filename>
+    <filesize>393003</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='2607616' len='393216'/>
+    </byte_runs>
+  </fileobject>
+  <fileobject>
+    <filename>f0005861.jpg</filename>
+    <filesize>40384</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='3000832' len='40960'/>
+    </byte_runs>
+  </fileobject>
+</dfxml>

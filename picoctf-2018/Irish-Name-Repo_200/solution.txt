@@ -1,0 +1,5 @@
+Visiting the support page, we find information about some sort of SQL error.
+From this, we can guess that the admin login page is vulnerable to an SQL injection.
+Using the classic payload of ' OR 1=1 -- allows us to log in and view the flag.
+
+picoCTF{con4n_r3411y_1snt_1r1sh_c0d93e2f}

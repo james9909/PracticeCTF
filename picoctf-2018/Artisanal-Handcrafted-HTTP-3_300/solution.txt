@@ -1,0 +1,85 @@
+Pretty straightforward if you're familiar with crafting raw HTTP requests using something like telnet.
+These are the steps I took to log into the server:
+
+$ nc 2018shell3.picoctf.com 26945
+GET /login HTTP/1.0
+Host: flag.local
+
+HTTP/1.1 200 OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 498
+etag: W/"1f2-UE5AGAqbLVQn1qrfKFRIqanxl9I"
+date: Fri, 05 Oct 2018 05:38:18 GMT
+connection: close
+
+
+				<html>
+						<head>
+								<link rel="stylesheet" type="text/css" href="main.css" />
+						</head>
+						<body>
+								<header>
+										<h1>Real Business Internal Flag Server</h1>
+										<a href="/login">Login</a>
+								</header>
+								<main>
+										<h2>Log In</h2>
+
+										<form method="POST" action="login">
+												<input type="text" name="user" placeholder="Username" />
+												<input type="password" name="pass" placeholder="Password" />
+												<input type="submit" />
+										</form>
+								</main>
+						</body>
+				</html>
+
+$ nc 2018shell3.picoctf.com 26945
+POST /login HTTP/1.0
+Host: flag.local
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 38
+
+user=realbusinessuser&pass=potoooooooo
+HTTP/1.1 302 Found
+x-powered-by: Express
+set-cookie: real_business_token=PHNjcmlwdD5hbGVydCgid2F0Iik8L3NjcmlwdD4%3D; Path=/
+location: /
+vary: Accept
+content-type: text/plain; charset=utf-8
+content-length: 23
+date: Fri, 05 Oct 2018 05:39:53 GMT
+connection: close
+
+Found. Redirecting to /
+
+$ nc 2018shell3.picoctf.com 26945
+GET / HTTP/1.0
+Host: flag.local
+cookie: real_business_token=PHNjcmlwdD5hbGVydCgid2F0Iik8L3NjcmlwdD4%3D
+
+HTTP/1.1 200 OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 438
+etag: W/"1b6-P3X+Gp97q63F5nCePqT+lsVPEas"
+date: Fri, 05 Oct 2018 05:41:20 GMT
+connection: close
+
+
+				<html>
+						<head>
+								<link rel="stylesheet" type="text/css" href="main.css" />
+						</head>
+						<body>
+								<header>
+										<h1>Real Business Internal Flag Server</h1>
+										<div class="user">Real Business Employee</div>
+										<a href="/logout">Logout</a>
+								</header>
+								<main>
+										<p>Hello <b>Real Business Employee</b>!  Today's flag is: <code>picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_a87a}</code>.</p>
+								</main>
+						</body>
+				</html>

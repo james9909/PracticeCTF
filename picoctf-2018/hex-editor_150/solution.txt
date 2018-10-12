@@ -1,0 +1,3 @@
+Run strings on the image to find the flag located after the image footer
+
+Your flag is: "picoCTF{and_thats_how_u_edit_hex_kittos_8BcA67a2}"

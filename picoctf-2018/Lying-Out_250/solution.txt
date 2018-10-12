@@ -1,0 +1,3 @@
+Just look for outliers according to the provided graph.
+
+picoCTF{w4y_0ut_de051415}

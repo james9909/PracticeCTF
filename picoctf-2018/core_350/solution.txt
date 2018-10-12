@@ -1,0 +1,8 @@
+Poking around, we can see that the program generates a lot of random strings into a large string
+array called strs. We can also see that the print_flag function uses the string at index 0x61a58, or 1337.
+Using gdb, we can print out the contents of the string array at that index to get the flag.
+
+gdb-peda$ p strs[1337]
+$55 = 0x80610f0 "31b1f6d7550619d1f774bef9c4c0e2e8"
+
+picoCTF{31b1f6d7550619d1f774bef9c4c0e2e8}

@@ -1,0 +1,3 @@
+Once again, the flag is just plaintext in the pcap, which we can find using grep.
+
+picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}

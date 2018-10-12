@@ -1,0 +1,7 @@
+At a first glance, we don't see anything in the problem directory, but if we run `ls -al`, we see
+a file called ".". Presumably that's where the flag is, so all we need to do is read it.
+
+james9909@pico-2018-shell-3:/problems/you-can-t-see-me_0_8fc4b46df0f4dd36b87a28877fcf9ea2$ cat .*
+cat: .: Is a directory
+picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_e3d80588}
+cat: ..: Permission denied

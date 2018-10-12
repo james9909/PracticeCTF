@@ -1,0 +1,4 @@
+Plug the ciphertext into an automated solver such as quipqiup
+to get the flag:
+
+congrats here is your flag - picoCTF{substitution_ciphers_are_solvable_poounsvovg}

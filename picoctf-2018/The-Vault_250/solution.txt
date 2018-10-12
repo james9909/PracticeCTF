@@ -1,0 +1,7 @@
+The login page seems to protect itself against a payload such as ' OR 1=1 -- ,
+but there are many other ways we can bypass the login.
+
+For example,
+' UNION SELECT 1 --
+will allow us to bypass the login and retrieve the flag
+picoCTF{w3lc0m3_t0_th3_vau1t_06857925}

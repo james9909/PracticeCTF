@@ -1,0 +1,5 @@
+Using a tool like stegsolve, we can look at the individual RGB planes, where we can see
+there there are some interesting bits of data at the top left corner.
+If we isolate RGB 0 planes, we can decode the flag from hex:
+
+picoCTF{r34d1ng_b37w33n_7h3_by73s}

