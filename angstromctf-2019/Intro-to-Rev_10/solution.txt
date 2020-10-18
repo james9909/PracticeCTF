@@ -1,0 +1,24 @@
+team3350@actf:/problems/2019/intro_to_rev$ ./intro_to_rev
+Welcome to your first reversing challenge!
+
+If you are seeing this, then you already ran the file! Let's try some input next.
+Enter the word 'angstrom' to continue:
+angstrom
+Good job! Some programs might also want you to enter information with a command line argument.
+
+When you run a file, command line arguments are given by running './introToRev argument1 argument2' where you replace each argument with a desired string.
+
+To get the flag for this problem, run this file again with the arguments 'binary' and 'reversing' (don't put the quotes).
+
+team3350@actf:/problems/2019/intro_to_rev$ ./intro_to_rev binary reversing
+Welcome to your first reversing challenge!
+
+If you are seeing this, then you already ran the file! Let's try some input next.
+Enter the word 'angstrom' to continue:
+angstrom
+Good job! Some programs might also want you to enter information with a command line argument.
+
+When you run a file, command line arguments are given by running './introToRev argument1 argument2' where you replace each argument with a desired string.
+
+Good job, now go solve some real problems!
+actf{this_is_only_the_beginning}

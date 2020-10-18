@@ -1,0 +1,68 @@
+Looking at the disassembly, we can tell that the program is checking two inputs: one string, and a pair of numbers.
+Breaking at the first strcmp (0x400807), we can look at the registers to see the arguments:
+
+RAX: 0x7fffffffd9f0 ("test")
+RBX: 0x0
+RCX: 0x10
+RDX: 0x7fffffffd9f0 ("test")
+RSI: 0x4009a1 ("okrrrrrrr")
+RDI: 0x7fffffffd9f0 ("test")
+RBP: 0x7fffffffda10 --> 0x4008f0 (<__libc_csu_init>:    push   r15)
+RSP: 0x7fffffffd9c0 --> 0x7fffffffdaf8 --> 0x7fffffffdea5 ("/home/james/Dev/CTF/PracticeCTF/angstromctf-2019/I-Like-It_40/i_like_it")
+RIP: 0x400807 (<main+97>:       call   0x400670 <strcmp@plt>)
+R8 : 0x602679 --> 0x0
+R9 : 0x7ffff7fcd500 (0x00007ffff7fcd500)
+R10: 0x3
+R11: 0x7ffff7b72590 (<__strlen_avx2>:   mov    ecx,edi)
+R12: 0x4006b0 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffdaf0 --> 0x1
+R14: 0x0
+R15: 0x0
+EFLAGS: 0x202 (carry parity adjust zero sign trap INTERRUPT direction overflow)
+[-------------------------------------code-------------------------------------]
+   0x4007fb <main+85>:  lea    rax,[rbp-0x20]
+   0x4007ff <main+89>:  mov    esi,0x4009a1
+   0x400804 <main+94>:  mov    rdi,rax
+=> 0x400807 <main+97>:  call   0x400670 <strcmp@plt>
+   0x40080c <main+102>: test   eax,eax
+   0x40080e <main+104>: je     0x400824 <main+126>
+   0x400810 <main+106>: mov    edi,0x4009ab
+   0x400815 <main+111>: call   0x400610 <puts@plt>
+
+RSI is "okrrrrrrr", so we know what the first input is.
+
+The second pair of inputs isn't hard to reverse either. Just from looking at the disassembly, we can tell
+what constraints they need to fulfill
+
+...snip
+0x0000000000400869 <+195>:   call   0x400680 <__isoc99_sscanf@plt>
+0x000000000040086e <+200>:   mov    edx,DWORD PTR [rbp-0x38]
+0x0000000000400871 <+203>:   mov    eax,DWORD PTR [rbp-0x34]
+0x0000000000400874 <+206>:   add    eax,edx
+0x0000000000400876 <+208>:   cmp    eax,0x88
+0x000000000040087b <+213>:   jne    0x400897 <main+241>
+0x000000000040087d <+215>:   mov    edx,DWORD PTR [rbp-0x38]
+0x0000000000400880 <+218>:   mov    eax,DWORD PTR [rbp-0x34]
+0x0000000000400883 <+221>:   imul   eax,edx
+0x0000000000400886 <+224>:   cmp    eax,0xec7
+0x000000000040088b <+229>:   jne    0x400897 <main+241>
+...snip
+
+From this, we can tell that two different comparisons are being made, which look like this:
+if (x + y != 0x88) {
+    goto fail
+}
+if (x * y != 0xec7) {
+    goto fail
+}
+
+The inputs that satisfy these constraints are 97 and 39.
+
+team3350@actf://problems/2019/i_like_it$ ./i_like_it
+I like the string that I'm thinking of:
+okrrrrrrr
+I said I like it like that!
+I like two integers that I'm thinking of (space separated):
+39 97
+I said I like it like that!
+Flag: actf{okrrrrrrr_39_97}

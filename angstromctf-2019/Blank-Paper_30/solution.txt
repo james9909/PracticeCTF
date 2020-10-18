@@ -1,0 +1,3 @@
+Not sure what the challenge here was, but the flag is immediately visible on the first page of the pdf.
+
+actf{knot_very_interesting}

@@ -1,0 +1,3 @@
+Just join the IRC channel and you can find the flag in the topic.
+
+actf{like_discord_but_worse}

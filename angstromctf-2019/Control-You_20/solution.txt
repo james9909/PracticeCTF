@@ -1,0 +1,10 @@
+Looking at the source code for the webpage, we can see the function stop() being called when the button is clicked,
+which checks the value of the input box against a constant string, which suspiciously looks like the flag.
+
+function stop() {
+    if (flag.value === "actf{control_u_so_we_can't_control_you}") {
+        document.body.style.background = "red";
+    }
+}
+
+Therefore, the flag is actf{control_u_so_we_can't_control_you}

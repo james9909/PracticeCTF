@@ -1,0 +1,8 @@
+Looking at each packet, we see that it starts with the following messages:
+
+defund!~defund@ec2-18-209-123-192.compute-1.amazonaws.com PRIVMSG defund :I have to confide in someone, even if it's myself
+defund!~defund@ec2-18-209-123-192.compute-1.amazonaws.com PRIVMSG defund :my publications are all randomly generated :(
+
+The next messages are all one character each, which create the flag when combined.
+
+actf{fake_math_papers}

@@ -1,0 +1,4 @@
+Finding the flag is as simple as grepping the pdf for "actf".
+
+$ strings full-mueller-report.pdf | grep actf
+actf{no0o0o0_col1l1l1luuuusiioooon}
