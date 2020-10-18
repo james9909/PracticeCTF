@@ -1,0 +1,4 @@
+The image likely uses some sort of LSB encoding, but as mentioned in the hint, we can
+decode it using an online tool such as this one: https://stylesuxx.github.io/steganography/
+
+picoCTF{h1d1ng_1n_th3_b1t5}

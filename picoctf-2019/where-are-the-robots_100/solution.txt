@@ -1,0 +1,4 @@
+Going to /robots.txt, we find that the url /713d3.html has been blacklisted.
+Visiting that url shows us the flag.
+
+picoCTF{ca1cu1at1ng_Mach1n3s_713d3}

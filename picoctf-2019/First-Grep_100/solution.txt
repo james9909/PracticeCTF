@@ -1,0 +1,4 @@
+Using grep, we can easily search for the string "pico", since we know the flag must start with that substring.
+
+$ grep "pico" file
+picoCTF{grep_is_good_to_find_things_eda8911c}

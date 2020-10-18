@@ -1,0 +1,5 @@
+Looking at the Javascript code used to verify the user's input, we can see that it checks
+several different chunks of it against constant strings. We just need to piece these strings together
+to get the flag.
+
+picoCTF{no_clients_plz_90ff34}

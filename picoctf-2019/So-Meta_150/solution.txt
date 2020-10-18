@@ -1,0 +1,4 @@
+Running `strings pico_img.png` will show us the flag.
+Alternatively, using a exif viewer such as `exiftool` will reveal that the artist's name is the flag:
+
+picoCTF{s0_m3ta_43f253bb}

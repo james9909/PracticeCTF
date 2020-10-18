@@ -1,0 +1,4 @@
+Running `file` shows us that the file given to us is actually an image, so we can view it with
+our favorite image viewer to get the flag:
+
+picoCTF{now_you_know_about_extensions}

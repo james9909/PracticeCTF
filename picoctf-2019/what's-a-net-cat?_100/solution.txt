@@ -1,0 +1,5 @@
+We can connect using the nc command. The syntax is `nc <host> <port>`.
+
+$ nc 2019shell1.picoctf.com 49816
+You're on your way to becoming the net cat master
+picoCTF{nEtCat_Mast3ry_a752a0d3}

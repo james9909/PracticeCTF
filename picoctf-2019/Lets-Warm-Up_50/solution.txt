@@ -1,0 +1,7 @@
+The character corresponding with the hex number 0x70 is p.
+
+We can easily convert this in python:
+>>> chr(0x70)
+'p'
+
+picoCTF{p}

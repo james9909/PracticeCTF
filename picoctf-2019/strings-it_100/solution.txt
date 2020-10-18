@@ -1,0 +1,5 @@
+We can find the flag using the `strings` command and grep. Using grep alone is slightly more complicated
+because the binary given to us contains a lot of non-printable characters.
+
+$ strings strings | grep pico
+picoCTF{5tRIng5_1T_c611cac7}

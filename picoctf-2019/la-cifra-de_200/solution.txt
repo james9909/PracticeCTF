@@ -1,0 +1,27 @@
+There's not much info to go on, but we can tell that there are numbers and names being used throughout the text.
+Searching up the numbers 1553 and 1467 on Google, we find the Wikipedia page for the Vigenere cipher.
+
+Sampling a small portion of the text, we find that the key could possibly be "flag".
+The tool I used was https://www.dcode.fr/vigenere-cipher.
+
+Now we can just decode the ciphertext with the repeating key "flag", to decode the full text and get the flag.
+
+
+It is interesting how in history people often receive credit for things they did not create
+
+During the course of history, the Vigenère Cipher has been reinvented many times
+
+It was falsely attributed to Blaise de Vigenère as it was originally described in 1553 by Giovan Battista Bellaso in his book La cifra del. Sig. Giovan Battista Bellaso
+
+For the implementation of this cipher a table is formed by sliding the lower half of an ordinary alphabet for an apparently random number of places with respect to the upper halfpicoCTF{b311a50_0r_v1gn3r3_c1ph3ra653edec}
+
+The first well-documented description of a polyalphabetic cipher however, was made around 1467 by Leon Battista Alberti.
+
+The Vigenère Cipher is therefore sometimes called the Alberti Disc or Alberti Cipher.
+
+In 1508, Johannes Trithemius invented the so-called tabula recta (a matrix of shifted alphabets) that would later be a critical component of the Vigenère Cipher.
+
+Bellaso’s second booklet appeared in 1555 as a continuation of the first. The lower halves of the alphabets are now shifted regularly, but the alphabets and the index letters are mixed by means of a mnemonic key phrase, which can be different with each correspondent.
+
+
+picoCTF{b311a50_0r_v1gn3r3_c1ph3ra653edec}

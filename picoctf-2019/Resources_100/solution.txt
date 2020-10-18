@@ -1,0 +1,1 @@
+The flag can be directly seen on the resources page: picoCTF{r3source_pag3_f1ag}

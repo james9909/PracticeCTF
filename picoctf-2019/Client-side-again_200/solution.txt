@@ -1,0 +1,10 @@
+The website is still using client side verification, but the JS code is obfuscated. However, we can see an array containing several
+strings that seem like they would appear in a flag:
+
+var _0x5a46=['29871}','_again_d','this','Password\x20Verified','Incorrect\x20password','getElementById','value','substring','picoCTF{','not_this'];
+
+The code then splits the user's input into several different chunks and checks them against a specific value within this array, so
+we know that everything we need to reconstruct the flag.
+
+With some guesswork, we can solve the problem:
+picoCTF{not_this_again_d29871}

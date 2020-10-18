@@ -1,0 +1,5 @@
+Connecting to the server will give us a flood of irrelevant text which we need to parse through to get the flag.
+We can pipe the output of `nc` to grep to easily do this:
+
+$ nc 2019shell1.picoctf.com 18944 | grep pico
+picoCTF{digital_plumb3r_1d5b7de7}

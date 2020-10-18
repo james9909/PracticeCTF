@@ -1,0 +1,4 @@
+Decoding ROT-13 is as simple as performing ROT-13 again, so we can just input the given ciphertext into a ROT-13 encoder/decoder
+to get the flag.
+
+picoCTF{not_too_bad_of_a_problem}

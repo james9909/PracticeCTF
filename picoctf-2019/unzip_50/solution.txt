@@ -1,0 +1,4 @@
+We can use the `unzip` command to extract the image from the zip file. The flag can be
+found from looking at the image.
+
+picoCTF{unz1pp1ng_1s_3a5y}

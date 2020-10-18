@@ -1,0 +1,5 @@
+Logging in with any username/password combination works, even common usernames like "admin" and "root".
+Looking at our cookies after logging in, we can see that there's a cookie called "admin", with the value "False".
+Changing it to "True" and refreshing the page will reveal the flag:
+
+picoCTF{th3_c0nsp1r4cy_l1v3s_9e21365b}

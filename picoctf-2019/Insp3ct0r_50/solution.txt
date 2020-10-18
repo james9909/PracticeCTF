@@ -1,0 +1,7 @@
+The flag is split up into three parts:
+
+Part 1 can be found immediately within the source code of the page: picoCTF{tru3_d3
+Part 2 can be found within the css file mycss.cs: t3ct1ve_0r_ju5t
+Part 3 can be found within the js file myjs.js: _lucky?d3db9182}
+
+Putting the 3 parts together, we get the flag: picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?d3db9182}

@@ -1,0 +1,8 @@
+Attempting to view the flag will tell us that we're not using "picobrowser", and shows us our browser's user agent.
+There's no real browser that will have the user agent "picobrowser", so we need to send our own
+request and forge the user agent ourselves.
+
+I decided to use curl, which will give us the full page containing the flag
+$ curl -A "picobrowser" https://2019shell1.picoctf.com/problem/21851/flag
+
+picoCTF{p1c0_s3cr3t_ag3nt_3e1c0ea2}

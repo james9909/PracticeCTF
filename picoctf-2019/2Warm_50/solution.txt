@@ -1,0 +1,5 @@
+Using Python, we can easily convert the given decimal to binary using bin()
+>>> bin(42)
+'0b101010'
+
+The flag is picoCTF{101010}

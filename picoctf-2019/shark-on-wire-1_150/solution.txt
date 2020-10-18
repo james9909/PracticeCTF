@@ -1,0 +1,6 @@
+Looking at the packet traffic, we see that there are multiple different UDP streams
+going to various destinations. Looking through each one, we find that the UDP stream
+from 10.0.0.2 to 10.0.0.12 contains characters for the flag. Using Wireshark's Follow UDP stream
+functionality, we can get the entire flag:
+
+picoCTF{StaT31355_636f6e6e}

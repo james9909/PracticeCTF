@@ -1,0 +1,7 @@
+The given image contains several different flag-like symbols, and we can tell from the fact
+that there are are curly braces that each symbol probably represents a single character.
+It turns out that there's already a flag-like alphabet used by sailors for communicating between ships
+that use these exact symbols. (https://en.wikipedia.org/wiki/International_maritime_signal_flags)
+
+Using this alphabet, we can decode the flag:
+PICOCTF{F1AG5AND5TUFF}

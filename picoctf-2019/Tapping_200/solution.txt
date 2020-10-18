@@ -1,0 +1,6 @@
+When connecting to the server, we find a series of dots and dashes which can only mean Morse code:
+
+.--. .. -.-. --- -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. .---- ---.. .---- ---.. ..--- ..--- ....- ..... --... ..... }
+
+Interpreting the string as morse code, we get the flag:
+PICOCTF{M0RS3C0D31SFUN1818224575}

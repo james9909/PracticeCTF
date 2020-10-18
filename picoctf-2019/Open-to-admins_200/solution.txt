@@ -1,0 +1,4 @@
+Given the problem's description, we can assume that we need to create two cookies: one for 'admin' and one for 'time'.
+Setting these cookies to "true" and "1400" respectively, we're able to click on the link to view the flag.
+
+picoCTF{0p3n_t0_adm1n5_cc661e91}

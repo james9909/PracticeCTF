@@ -1,0 +1,3 @@
+We can use Python to easily convert the given hexadecimal number into a base 10 one.
+>>> 0x3D
+61

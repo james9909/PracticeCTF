@@ -1,0 +1,4 @@
+Opening up the given Java file, we find that the user's input is being passed to `checkPassword`, which will check against the
+hard coded string "w4rm1ng_Up_w1tH_jAv4_c0b141c5e30" to see if we had the correct password.
+
+picoCTF{w4rm1ng_Up_w1tH_jAv4_c0b141c5e30}

@@ -1,0 +1,4 @@
+Looking at the source code, we can see that the checkPassword method checks individual characters within the input. We can reconstruct the flag
+by taking the characters that are checked from index 0 to 31.
+
+picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_2487f0}

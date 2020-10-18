@@ -1,0 +1,7 @@
+The given string looks similar to a base64 encoded string because it only consists of
+alphanumeric characters with mixed casing. Using Python 2, we can easily decode this:
+
+>>> "bDNhcm5fdGgzX3IwcDM1".decode("base64")
+'l3arn_th3_r0p35'
+
+picoCTF{l3arn_th3_r0p35}

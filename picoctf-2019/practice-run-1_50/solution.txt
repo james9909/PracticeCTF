@@ -1,0 +1,4 @@
+Running a program called "binary_name" is as simple as running `./binary_name`.
+
+james9909@pico-2019-shell1:/problems/practice-run-1_0_62b61488e896645ebff9b6c97d0e775e$ ./run_this
+picoCTF{g3t_r3adY_2_r3v3r53}
