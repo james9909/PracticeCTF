@@ -1,0 +1,13 @@
+The program checks if you've won by determining if your input contains the winning choice as a substring.
+All we need to do is input a string containing all possible choices as substrings.
+
+$ nc saturn.picoctf.net 51420
+...
+Please make your selection (rock/paper/scissors):
+rockpaperscissors
+rockpaperscissors
+You played: rockpaperscissors
+The computer played: paper
+You win! Play again?
+Congrats, here's the flag!
+picoCTF{50M3_3X7R3M3_1UCK_58F0F41B}

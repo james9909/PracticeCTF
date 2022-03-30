@@ -1,0 +1,3 @@
+Since the decryption doesn't depend on the input, we can call the decrypt function directly.
+
+picoCTF{p47ch1ng_l1f3_h4ck_c4a4688b}

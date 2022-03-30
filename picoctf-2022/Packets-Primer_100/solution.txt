@@ -1,0 +1,14 @@
+$ strings network-dump.flag.pcap
+k&Nar
+n#('
+k&Na
+k&Na`
+n#('
+k&Na;
+n#('
+p i c o C T F { p 4 c k 3 7 _ 5 h 4 r k _ c e c c a a 7 f }
+k&Naa
+ep&Na(
+p&NaX
+p&Na28
+p&Na

@@ -1,0 +1,2 @@
+Using a morse code translator online (https://morsecode.world/international/decoder/audio-decoder-adaptive.html) we can directly decode the flag:
+picoCTF{wh47_h47h_90d_w20u9h7}

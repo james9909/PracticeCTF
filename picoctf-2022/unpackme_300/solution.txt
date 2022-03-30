@@ -1,0 +1,26 @@
+We can unpack the binary with upx, the same program used to pack it.
+
+> upx -d unpackme-upx
+                       Ultimate Packer for eXecutables
+                          Copyright (C) 1996 - 2018
+UPX 3.95        Markus Oberhumer, Laszlo Molnar & John Reiser   Aug 26th 2018
+
+        File size         Ratio      Format      Name
+   --------------------   ------   -----------   -----------
+   1002408 <-    379108   37.82%   linux/amd64   unpackme-upx
+
+Unpacked 1 file.
+
+Now that we can easily inspect the assembly, we see the following:
+
+```
+   0x0000000000401ef5 <+130>:   mov    -0x3c(%rbp),%eax
+   0x0000000000401ef8 <+133>:   cmp    $0xb83cb,%eax
+   0x0000000000401efd <+138>:   jne    0x401f42 <main+207>
+```
+
+0xb83cb is hex for 754635 which is the correct answer.
+
+> ./unpackme-upx
+What's my favorite number? 754635
+picoCTF{up><_m3_f7w_77ad107e}

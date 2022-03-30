@@ -1,0 +1,7 @@
+The program has been obfuscated with hard coded strings being replaced by references to a static alphabet.
+We can evaluate these expressions to get the real string values. Turns out the first expression at the top is the password.
+
+$ python3 unbloat.py
+Please enter correct password for flag: happychance
+Welcome back... your flag, user:
+picoCTF{d30bfu5c4710n_f7w_b8062eec}

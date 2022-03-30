@@ -1,0 +1,3 @@
+Using a simple ' OR 1=1 -- query gives us the flag:
+
+picoCTF{L00k5_l1k3_y0u_solv3d_it_9b0a4e21}
