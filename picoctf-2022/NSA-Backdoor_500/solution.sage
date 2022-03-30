@@ -15,4 +15,5 @@ dl_q = discrete_log(GF(q)(y), GF(q)(g))
 private = int(crt([dl_p, dl_q], [p - 1, q - 1]))
 print(binascii.unhexlify(hex(private)[2:]))
 
+# n was factored using https://pypi.org/project/primefac/
 # picoCTF{1ca93858}
