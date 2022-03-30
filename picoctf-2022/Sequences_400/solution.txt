@@ -1,0 +1,11 @@
+We can have WolframAlpha solve the recurrence for us:
+https://www.wolframalpha.com/input?i=f%28n%29%3D21*f%28n-1%29%2B301*f%28n-2%29-9549*f%28n-3%29%2B55692*f%28n-4%29%2C+f%280%29%3D1%2C+f%281%29%3D2%2Cf%282%29%3D3%2Cf%283%29%3D4
+
+Thankfully the output of the function gets modded before it gets used for decryption, so we can still use Wolfram Alpha to evaluate the recurrence:
+https://www.wolframalpha.com/input?i=%28%281612+%28-21%29%5En+%2B+30685+2%5E%285+%2B+2+n%29+3%5En+-+1082829+13%5En+%2B+8349+17%5E%281+%2B+n%29%29%2F42636%29+mod+10**10000+where+n+%3D+20000000
+
+We can directly paste in this number into the Python script to decrypt the flag.
+
+$ python3 sequences.py
+picoCTF{b1g_numb3rs_afc4ce7f}
+

@@ -1,0 +1,11 @@
+Torrents have an info hash that can identify the file that is being downloaded. Given that the first few packets suggest that we're torrenting
+from Ubuntu we can safely guess that this hash would be wide enough known for us to Google.
+
+$ xxd torrent.pcap | grep info -A2
+...
+03c34fe0: 93b7 863a c1aa 393a 696e 666f 5f68 6173  ...:..9:info_has
+03c34ff0: 6832 303a e246 7cbf 0211 92c2 4136 7b89  h20:.F|.....A6{.
+03c35000: 2230 dc1e 05c0 580e 6531 3a71 393a 6765  "0....X.e1:q9:ge
+
+So the info hash is e2467cbf021192c241367b892230dc1e05c0580e and inputting that into Google will give us the file name.
+picoCTF{ubuntu-19.10-desktop-amd64.iso}

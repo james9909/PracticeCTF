@@ -9,50 +9,10 @@ y = 1023003250319932740162725019772456077503679459871142266572310993167651946189
 n = p * q
 
 g = 3
-#
-# # Pohlig-Hellman in (p-1)/2
-# yp = y % p
-# xp = 0
-# xp_mod = 1
-#
-# for order in p_factors[1:]: # to remove the 2
-#     # reduce the problem
-#     new_problem = power_mod(yp, (p-1)//order, p)
-#     # find a generator of that group
-#     new_generator = power_mod(g, (p-1)//order, p)
-#     # Pollard Rho
-#     new_problem = GF(p)(new_problem)
-#     new_generator = GF(p)(new_generator)
-#     new_xp = discrete_log_rho(new_problem, new_generator, order)
-#     #
-#     xp = CRT(xp, new_xp, xp_mod, order)
-#     xp_mod *= order
-#
-# # Pohlig-Hellman in (q-1)
-# yq = y % q
-# xq = 0
-# xq_mod = 1
-#
-# for order in q_factors: # we need the 2
-#     # reduce the problem
-#     new_problem = power_mod(yq, (q-1)//order, q)
-#     # find a generator of that grouq
-#     new_generator = power_mod(g, (q-1)//order, q)
-#     # Qollard Rho
-#     new_problem = GF(q)(new_problem)
-#     new_generator = GF(q)(new_generator)
-#     new_xq = discrete_log_rho(new_problem, new_generator, order)
-#     #
-#     xq = CRT(xq, new_xq, xq_mod, order)
-#     xq_mod *= order
-#
-# # CRT
-# sol = CRT(xp, xq, xp_mod, xq_mod)
-# print(sol)
-# assert power_mod(3, sol, n) == y
 
-FLAG = 6761206136364956042543115511656117287459997182370725750216519365964645492075597809265459735465904421593434798989163735237601079093143075290768252231659823854613212550367058280764704659736260884494123474393197674396671222781050516498237888800855673625678996522915484034617335407132225828890304685522445069598071661190832280329336245887071550221185686663967281711429527620799501680188766322697854887670032916650514365631738478632013325671631118969640902867453845697430120429970284509265267396263861041846682825227522174532072701528643702538640622049297405723899758929478966589868728439511498980556467237071877156366590
-assert pow(3, FLAG, n) == y
-print(binascii.unhexlify(hex(FLAG)[2:]))
-print(FLAG)
-# print(hex(FLAG))
+dl_p = discrete_log(GF(p)(y), GF(p)(g))
+dl_q = discrete_log(GF(q)(y), GF(q)(g))
+private = int(crt([dl_p, dl_q], [p - 1, q - 1]))
+print(binascii.unhexlify(hex(private)[2:]))
+
+# picoCTF{1ca93858}
