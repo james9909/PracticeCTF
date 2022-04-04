@@ -1,0 +1,24 @@
+Using a dirbuster-like tool, we can find the hidden subdirectories:
+
+$ dirhunt http://saturn.picoctf.net:61481/index.html
+Welcome to Dirhunt v0.8.1 using Python 3.8.10
+[200] http://saturn.picoctf.net:61481/  (HTML document)
+    Index file found: index.html
+[200] http://saturn.picoctf.net:61481/about.html  (HTML document)
+    Index file found: index.html
+[200] http://saturn.picoctf.net:61481/contact.html  (HTML document)
+    Index file found: index.html
+[200] http://saturn.picoctf.net:61481/secret/  (HTML document)
+    Index file found: index.html
+[404] http://saturn.picoctf.net:61481/vendor/bootstrap/css/  (Not Found)
+[403] http://saturn.picoctf.net:61481/secret/assets/  (Generic)
+[404] http://saturn.picoctf.net:61481/vendor/bootstrap/  (Not Found)
+[404] http://saturn.picoctf.net:61481/vendor/  (Not Found)
+[200] http://saturn.picoctf.net:61481/secret/hidden/  (HTML document)
+    Index file found: index.html
+[200] http://saturn.picoctf.net:61481/secret/hidden/superhidden/  (HTML document)
+    Index file found: index.html
+↖ Finished after 4 seconds
+No interesting files detected ¯\_(ツ)_/¯
+
+At http://saturn.picoctf.net:61481/secret/hidden/superhidden/, the flag can be found in the source code.

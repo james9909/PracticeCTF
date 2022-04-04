@@ -1,0 +1,4 @@
+Inputting the given class into an online Java class decompiler, we get the source of a program that checks
+each individual character of the input. Putting everything together we get the flag:
+
+picoCTF{700l1ng_r3qu1r3d_738cac89}

@@ -1,0 +1,13 @@
+Opening up the disk image in Sleuthkit again, we see another OpenSSL encrypted file.
+
+From looking at /root/.ssh_history we find the command used to encrypt:
+openssl aes256 -salt -in flag.txt -out flag.txt.enc -k unbreakablepassword1234567
+
+This is all the information we need to decrypt the flag:
+$ openssl aes256 -d -salt -in vol4-3.root.flag.txt.enc -out flag.txt -k unbreakablepassword1234567
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+bad decrypt
+139840992253248:error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:610:
+$ cat flag.txt
+picoCTF{h4un71ng_p457_0a710765}

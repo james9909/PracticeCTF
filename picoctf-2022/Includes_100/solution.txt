@@ -1,0 +1,3 @@
+The two parts of the flag are hidden in the CSS and JS files.
+
+picoCTF{1nclu51v17y_1of2_f7w_2of2_df589022}

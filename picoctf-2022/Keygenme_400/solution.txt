@@ -1,0 +1,42 @@
+Looking through the assembly we see that there are two calls to MD5. The first one seems to be the important one:
+
+   0x555555555294:      call   0x5555555550f0 <MD5@plt>
+   0x555555555299:      lea    rax,[rbp-0xb2]
+   0x5555555552a0:      mov    rdi,rax
+   0x5555555552a3:      call   0x5555555550e0 <strlen@plt>
+   0x5555555552a8:      mov    rcx,rax
+   0x5555555552ab:      lea    rdx,[rbp-0xa0]
+   0x5555555552b2:      lea    rax,[rbp-0xb2]
+   0x5555555552b9:      mov    rsi,rcx
+   0x5555555552bc:      mov    rdi,rax
+   0x5555555552bf:      call   0x5555555550f0 <MD5@plt>
+
+After breaking at 0x555555555294, we see this in our register:
+    RAX: 0x7fffffffdcd0 ("picoCTF{br1ng_y0ur_0wn_k3y_")
+
+We have most of the flag so we just need to find the remaining few characters.
+Later we see the following characters being written to the buffer that ends up getting checked against
+our input:
+
+   0x5555555553c8:      movzx  eax,BYTE PTR [rbp-0x63]
+   0x5555555553cc:      mov    BYTE PTR [rbp-0x15],al
+   0x5555555553cf:      movzx  eax,BYTE PTR [rbp-0x5e]
+   0x5555555553d3:      mov    BYTE PTR [rbp-0x14],al
+   0x5555555553d6:      movzx  eax,BYTE PTR [rbp-0x53]
+   0x5555555553da:      mov    BYTE PTR [rbp-0x13],al
+   0x5555555553dd:      movzx  eax,BYTE PTR [rbp-0x6f]
+   0x5555555553e1:      mov    BYTE PTR [rbp-0x12],al
+   0x5555555553e4:      movzx  eax,BYTE PTR [rbp-0x62]
+   0x5555555553e8:      mov    BYTE PTR [rbp-0x11],al
+   0x5555555553eb:      movzx  eax,BYTE PTR [rbp-0x58]
+   0x5555555553ef:      mov    BYTE PTR [rbp-0x10],al
+   0x5555555553f2:      movzx  eax,BYTE PTR [rbp-0x56]
+   0x5555555553f6:      mov    BYTE PTR [rbp-0xf],al
+   0x5555555553f9:      movzx  eax,BYTE PTR [rbp-0x53]
+   0x5555555553fd:      mov    BYTE PTR [rbp-0xe],al
+   0x555555555400:      movzx  eax,BYTE PTR [rbp-0xb2]
+   0x555555555407:      mov    BYTE PTR [rbp-0xd],al
+   0x55555555540a:      mov    rax,QWORD PTR [rbp-0xd8]
+
+Decoding the rest of those characters gives us the full flag:
+picoCTF{br1ng_y0ur_0wn_k3y_19836cd8}

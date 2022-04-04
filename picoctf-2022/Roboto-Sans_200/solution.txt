@@ -1,0 +1,5 @@
+The robots.txt file contains some suspicious looking text:
+>>> base64.b64decode("anMvbXlmaWxlLnR4dA==")
+b'js/myfile.txt'
+
+Going to http://saturn.picoctf.net:65352/js/myfile.txt reveals the flag.

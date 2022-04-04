@@ -1,0 +1,5 @@
+Using Sleuthkit's autopsy tool we can search for files in the image.
+
+Turns out there's a file called /3/root/my_folder/flag.uni.txt that contains the flag.
+
+picoCTF{by73_5urf3r_3497ae6b}

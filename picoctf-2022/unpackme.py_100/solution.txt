@@ -1,0 +1,3 @@
+By printing out `plain` right before it gets executed, we can get the source for the packed program.
+> python3 unpackme.flag.py
+b"\npw = input('What\\'s the password? ')\n\nif pw == 'batteryhorse':\n  print('picoCTF{175_chr157m45_5274ff21}')\nelse:\n  print('That password is incorrect.')\n\n"

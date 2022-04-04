@@ -1,0 +1,14 @@
+Decompiling the binary we get the following source:
+
+```
+    function_1140("%d", (int64_t *)&v3, 0xd2c49, 0xd2c49);
+    if (v3 != 0x86187) {
+        // 0x1583
+        function_10f0("Sorry, that's not it!", 0xd2c49, 0xd2c49);
+```
+
+0x86187 is hex for 549255, and inputting that into the program gives us the flag.
+
+$ ./bbbbloat
+What's my favorite number? 549255
+picoCTF{cu7_7h3_bl047_36dd316a}

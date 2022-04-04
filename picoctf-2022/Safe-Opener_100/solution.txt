@@ -1,0 +1,10 @@
+The Java program just checks if the base64 encoding of the user input is equal to some magic string.
+We can decode the magic string to get the expected plaintext.
+
+$ python3
+Python 3.8.10 (default, Nov 26 2021, 20:14:08)
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import base64
+>>> base64.b64decode('cGwzYXMzX2wzdF9tM18xbnQwX3RoM19zYWYz')
+b'pl3as3_l3t_m3_1nt0_th3_saf3'

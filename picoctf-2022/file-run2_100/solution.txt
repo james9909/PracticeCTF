@@ -1,0 +1,2 @@
+$ ./run Hello\!
+The flag is: picoCTF{F1r57_4rgum3n7_be0714da}
