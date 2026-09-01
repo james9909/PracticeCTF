@@ -1,0 +1,21 @@
+> smbclient -L //mysterious-sea.picoctf.net -p 54319 -N
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        shares          Disk      Public Share With Guests
+        IPC$            IPC       IPC Service (Samba 4.19.5-Ubuntu)
+SMB1 disabled -- no workgroup available
+> smbclient //mysterious-sea.picoctf.net/shares -p 54319 -N
+Try "help" to get a list of possible commands.
+smb: \> ls
+  .                                   D        0  Fri Mar  6 12:25:41 2026
+  ..                                  D        0  Fri Mar  6 12:25:41 2026
+  dummy.txt                           N     1142  Wed Feb  4 13:22:17 2026
+  flag.txt                            N       37  Fri Mar  6 12:25:41 2026
+
+                65536 blocks of size 1024. 56896 blocks available
+smb: \> get flag.txt
+getting file \flag.txt of size 37 as flag.txt (0.2 KiloBytes/sec) (average 0.2 KiloBytes/sec)
+
+> cat flag.txt
+picoCTF{5mb_pr1nter_5h4re5_8eb6dd5d}

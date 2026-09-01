@@ -1,0 +1,90 @@
+After downloading the kubeconfig from the server, we need to modify its contents so that the server address points to the public url.
+
+Once we do that we can access the cluster using `kubectl`. The problem describes a flag in the secrets which is pretty straightforward: find namespaces of interest, list their secrets, and output the flag.
+
+```
+> KUBECONFIG=kubeconfig kubectl describe namespaces --cluster default --insecure-skip-tls-verify
+
+E0310 20:34:16.472605    5746 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://green-hill
+.picoctf.net:54390/api?timeout=32s\": net/http: TLS handshake timeout"
+Name:         default
+Labels:       kubernetes.io/metadata.name=default
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
+
+
+Name:         kube-node-lease
+Labels:       kubernetes.io/metadata.name=kube-node-lease
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+Name:         kube-node-lease
+Labels:       kubernetes.io/metadata.name=kube-node-lease
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
+
+
+Name:         kube-public
+Labels:       kubernetes.io/metadata.name=kube-public
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
+
+
+Name:         kube-system
+Labels:       kubernetes.io/metadata.name=kube-system
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
+
+
+Name:         picoctf
+Labels:       kubernetes.io/metadata.name=picoctf
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
+
+> KUBECONFIG=kubeconfig kubectl describe secrets --cluster default --insecure-skip-tls-verify
+No resources found in default namespace.
+
+> KUBECONFIG=kubeconfig kubectl describe secrets --cluster default --insecure-skip-tls-verify -n picoctf
+Name:         ctf-secret
+Namespace:    picoctf
+Labels:       <none>
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+flag:  37 bytes
+
+> KUBECONFIG=kubeconfig kubectl get secrets ctf-secret --cluster default --insecure-skip-tls-verify -n picoctf
+NAME         TYPE     DATA   AGE
+ctf-secret   Opaque   1      13m
+
+> KUBECONFIG=kubeconfig kubectl get secrets ctf-secret --cluster default --insecure-skip-tls-verify -n picoctf -o jsonpath='{.data}'
+{"flag":"cGljb0NURntrczNjcjM3NV80MW43X3M0ZjNfYzMyMWZiMTV9Cg=="}%
+
+> echo -n "cGljb0NURntrczNjcjM3NV80MW43X3M0ZjNfYzMyMWZiMTV9Cg==" | base64 -d
+picoCTF{ks3cr375_41n7_s4f3_c321fb15}
+```

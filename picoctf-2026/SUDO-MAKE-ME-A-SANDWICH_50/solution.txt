@@ -1,0 +1,21 @@
+SSHing into the server we see a `flag.txt` that is only accessible to root. However we can't just cat the file:
+
+```
+ctf-player@challenge:~$ sudo cat flag.txt
+[sudo] password for ctf-player:
+Sorry, user ctf-player is not allowed to execute '/usr/bin/cat flag.txt' as root on challenge
+```
+
+This means that there's some limitation on the commands that we're allowed to execute as sudo. We can find these by running
+```
+ctf-player@challenge:~$ sudo -l
+Matching Defaults entries for ctf-player on challenge:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User ctf-player may run the following commands on challenge:
+    (ALL) NOPASSWD: /bin/emacs
+```
+
+Since we can execute `/bin/emacs`, we can use that to view the flag.
+
+picoCTF{ju57_5ud0_17_f8185e1e}

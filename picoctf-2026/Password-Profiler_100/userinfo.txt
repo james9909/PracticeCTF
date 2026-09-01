@@ -1,0 +1,7 @@
+First Name: Alice
+Surname: Johnson
+Nickname: AJ
+Birthdate: 15-07-1990
+Partner's Name: Bob
+Child's Name: Charlie
+

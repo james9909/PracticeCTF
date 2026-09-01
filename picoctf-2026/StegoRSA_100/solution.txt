@@ -1,0 +1,5 @@
+Looking at the exif data for the image, we see a hex encoded string. Decoding the string from hex gives us an openssl private key.
+
+> openssl rsautl -in flag.enc -inkey priv.key -decrypt
+The command rsautl was deprecated in version 3.0. Use 'pkeyutl' instead.
+picoCTF{rs4_k3y_1n_1mg_51611ab8}

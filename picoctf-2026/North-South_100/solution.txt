@@ -1,0 +1,3 @@
+Using a VPN to Iceland (code IS), we can get the flag when we load up the page.
+
+picoCTF{g30_b453d_r0u71n9_c4df0637}

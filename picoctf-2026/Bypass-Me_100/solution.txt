@@ -1,0 +1,45 @@
+Looking at the binary, we can see the function `decode_password`. Opening the file in GDB, we can set a breakpoint
+at the end of that function, then run `show locals` to view all variables at that point, one of which would be the decoded password.
+
+```
+gdb-peda$ info locals
+buf = "a", '\000' <repeats 126 times>
+sanitized = "a", '\000' <repeats 126 times>
+password = "SuperSecure", '\000' <repeats 116 times>
+attempts = 0xffffffff
+```
+
+With this, we know the password we need is "SuperSecure".
+
+```
+ctf-player@pico-chall$ ./bypassme.bin
+
+
+
+          ███████╗███████╗ ██████╗██╗   ██╗██████╗ ███████╗    ██████╗  ██████╗ ██████╗ ████████╗ █████╗ ██╗
+          ██╔════╝██╔════╝██╔════╝██║   ██║██╔══██╗██╔════╝    ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔══██╗██║
+          ███████╗█████╗  ██║     ██║   ██║██████╔╝█████╗      ██████╔╝██║   ██║██████╔╝   ██║   ███████║██║
+          ╚════██║██╔══╝  ██║     ██║   ██║██╔══██╗██╔══╝      ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══██║██║
+          ███████║███████╗╚██████╗╚██████╔╝██║  ██║███████╗    ██║     ╚██████╔╝██║  ██║   ██║   ██║  ██║███████╗
+          ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝
+
+ Initializing secure modules...
+ Running memory diagnostics...
+ All systems online...
+
+ Access to this terminal is restricted.
+ Please authenticate below.
+----------------------------------------
+
+
+[3 tries left] Enter password: SuperSecure
+
+Raw Input:      [SuperSecure]
+Sanitized Input:[SuperSecure]
+Hint: Input must match something special...
+
+Authenticating...
+🎉 Flag: picoCTF{d3bugg3r_p0w3r_is_4w3s0m3_f4dd81c8}
+ctf-player@pico-chall$ Connection to foggy-cliff.picoctf.net closed by remote host.
+Connection to foggy-cliff.picoctf.net closed.
+```

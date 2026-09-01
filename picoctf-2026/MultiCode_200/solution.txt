@@ -1,0 +1,4 @@
+The path is rot 13 -> urlencode -> hex -> base64.
+
+> cat message.txt | base64 -d | xxd -r -p | python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));" |  tr 'A-Za-z' 'N-ZA-Mn-za-m'
+picoCTF{nested_enc0ding_f3a24f73}
