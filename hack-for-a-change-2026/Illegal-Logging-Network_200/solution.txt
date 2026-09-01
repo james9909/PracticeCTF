@@ -1,0 +1,7 @@
+We need to generate a valid permit in the form of VER-<string>-<sha256(str)>
+
+The first few permits I generated told me the permit needed to be longer, so I ended up trying "aaaaa" which worked.
+
+The permit for "aaaaa" is VER-aaaaa-ed968e840d10d2d313a870bc131a4e2c311d7ad09bdf32b3418147221f51a6e2.
+
+SDG{a532f939e6de2a477b67bded1a02c2a2}

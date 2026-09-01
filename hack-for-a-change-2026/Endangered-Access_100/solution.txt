@@ -1,0 +1,18 @@
+The problem brings us to a webpage with the following description:
+
+```
+Description: Your goal is to obtain the telemetry proof code that is normally restricted by the UI. Bypass the client-side gate and retrieve the code to claim your flag.
+```
+
+Looking at runtime.js, we see a bunch of code relating to all other problems, and under `endangered-access` we see this:
+
+
+```
+function gateIsOpen() {
+    return hasBypassParam || window.overrideAccess === true;
+}
+```
+
+Setting `window.overrideAccess = true` in the console then clicking the "fetch telemetry" reveals a hidden button that let's us claim the flag.
+
+SDG{1944aa284c8c3b765a6cf352784ed18c}

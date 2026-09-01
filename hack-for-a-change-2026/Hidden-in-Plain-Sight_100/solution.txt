@@ -1,0 +1,9 @@
+The problem asks us to find a hex code somewhere on the page, with the hint that you can use Inspect Element.
+
+Looking at the source code for the page, we see this element:
+
+<div class="hidden-proof" id="hips-hidden" aria-hidden="true">PROOF: cdc89259ed39e4c768c39097d00df5d8</div>
+
+Now that we know the proof, we just need to submit it for the flag.
+
+SDG{7cca53a217ed2aa3a29b4f76434addfd}
