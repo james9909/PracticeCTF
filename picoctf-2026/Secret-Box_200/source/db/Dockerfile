@@ -1,0 +1,2 @@
+FROM postgres@sha256:301bcb60b8a3ee4ab7e147932723e3abd1cef53516ce5210b39fd9fe5e3602ae
+COPY initdb.sql /docker-entrypoint-initdb.d/

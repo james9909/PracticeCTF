@@ -1,0 +1,38 @@
+SSHing into the server we see this in our home directory:
+
+```
+ctf-player@pico-chall$ ls
+instructions.txt  part_aa  part_ab  part_ac  part_ad  part_ae
+ctf-player@pico-chall$ cat instructions.txt
+Hint:
+
+- The flag is split into multiple parts as a zipped file.
+- Use Linux commands to combine the parts into one file.
+- The zip file is password protected. Use this "supersecret" password to extract the zip file.
+- After unzipping, check the extracted text file for the flag.
+```
+
+The instructions are pretty clear, we just need to combine the data in each file in alphabetical order to
+reconstruct the zip file that contains the flag.
+
+```
+ctf-player@pico-chall$ file part_aa
+part_aa: Zip archive data, at least v1.0 to extract
+ctf-player@pico-chall$ file part_ab
+part_ab: data
+ctf-player@pico-chall$ unzip part_aa
+Archive:  part_aa
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of part_aa or
+        part_aa.zip, and cannot find part_aa.ZIP, period.
+ctf-player@pico-chall$ cat part_* > flag.zip
+ctf-player@pico-chall$ unzip flag.zip
+Archive:  flag.zip
+[flag.zip] flag.txt password:
+ extracting: flag.txt
+ctf-player@pico-chall$ cat flag.txt
+picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_27804340}c
+```

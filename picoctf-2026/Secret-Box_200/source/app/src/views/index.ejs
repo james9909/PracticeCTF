@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secrets Vault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        
+        .container {
+            padding: 40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #6c5ce7;
+            margin-bottom: 24px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .highlight {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+            color: #636e72;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 36px;
+        }
+        
+        .button {
+            display: inline-block;
+            min-width: 140px;
+            padding: 14px 24px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+			background: #5649c0;
+			color: white;
+        }
+        
+        .vault-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+		<% if (message) { %>
+			<p style="color: green;"><%= message %></p>
+		<% } %>
+
+		<% if (error) { %>
+			<p style="color: red;"><%= error %></p>
+		<% } %>
+
+        <div class="vault-icon">🔐</div>
+        <h1>Secret Vault</h1>
+        
+        <div class="highlight">Carrying secrets that deserve a better hiding place?</div>
+        <div class="description">Welcome to your personal vault - Only You Can See</div>
+        
+        <div class="buttons">
+            <a href="/login" class="button">Log In</a>
+            <a href="/signup" class="button">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>

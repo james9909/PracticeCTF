@@ -1,0 +1,5 @@
+Registering a new user, we see a comment from another user saying that there's something interesting at /sessions.
+
+Loading up that page reveals two session tokens, one of which has `'key': 'admin'`. The problem description suggests that these sessions don't expire so we can easily rewrite our session cookie with the admin token to get the flag.
+
+picoCTF{s3t_s3ss10n_3xp1rat10n5_10f20509}

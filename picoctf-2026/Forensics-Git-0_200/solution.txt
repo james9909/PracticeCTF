@@ -1,0 +1,17 @@
+Looking at the image, we see a `secrets` repo in the ctf-player home directory. Extracting that
+so we can play around locally, we see a note.txt
+
+```
+> cat note.txt
+The picoCTF flag format is 'picoCTF{}' where there is some leetspeak phrase in between the curly braces
+```
+
+This is not too helpful though, but poking around `git log` shows us the real flag:
+```
+> git log
+commit 327681bb38cf467cec328eec9707b240e3e74ced (HEAD -> master)
+Author: ctf-player <ctf-player@example.com>
+Date:   Wed Nov 19 08:49:27 2025 +0000
+
+    Wrap this phrase in the flag format: g17_1n_7h3_d15k_041217d8
+```

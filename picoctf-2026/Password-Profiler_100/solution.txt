@@ -1,0 +1,53 @@
+Using cupp (https://github.com/mebus/cupp), we can generate a password dictionary by supplying various facts
+about our user into the program interactively.
+
+$ python3 cupp.py -i
+ ___________
+   cupp.py!                 # Common
+      \                     # User
+       \   ,__,             # Passwords
+        \  (oo)____         # Profiler
+           (__)    )\
+              ||--|| *      [ Muris Kurgas | j0rgan@remote-exploit.org ]
+                            [ Mebus | https://github.com/Mebus/]
+
+
+[+] Insert the information about the victim to make a dictionary
+[+] If you don't know all the info, just hit enter when asked! ;)
+
+> First Name: Alice
+> Surname: Johnson
+> Nickname: AJ
+> Birthdate (DDMMYYYY): 15071990
+
+
+> Partners) name: Bob
+> Partners) nickname:
+> Partners) birthdate (DDMMYYYY):
+
+
+> Child's name: Charlie
+> Child's nickname:
+> Child's birthdate (DDMMYYYY):
+
+
+> Pet's name:
+> Company name:
+
+
+> Do you want to add some key words about the victim? Y/[N]: y
+> Please enter the words, separated by comma. [i.e. hacker,juice,black], spaces will be removed:
+> Do you want to add special chars at the end of words? Y/[N]: n
+> Do you want to add some random numbers at the end of words? Y/[N]:n
+> Leet mode? (i.e. leet = 1337) Y/[N]: n
+
+[+] Now making a dictionary...
+[+] Sorting list and removing duplicates...
+[+] Saving dictionary to alice.txt, counting 4100 words.
+> Hyperspeed Print? (Y/n) : Y
+
+Running check_passwords.py with the generated dictionary will show us the flag.
+```
+> python3 check_password.py
+Password found: picoCTF{Aj_15901990}
+```

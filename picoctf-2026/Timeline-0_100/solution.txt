@@ -1,0 +1,7 @@
+Using sleuthkit we can find a file created in 01/01/1985 named "/bin/bcab". Extracting this file shows that it's ASCII text that looks a lot like base64.
+
+> echo -n "NzFtMzExbjNfMHU3MTEzcl9oM3JfNDNhMmU3YWYK" | base64 -d
+71m311n3_0u7113r_h3r_43a2e7af
+
+Wrapping this in the flag format gives us the flag:
+picoCTF{71m311n3_0u7113r_h3r_43a2e7af}

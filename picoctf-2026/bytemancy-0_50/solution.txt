@@ -1,0 +1,9 @@
+$ python3 -c "print('\x65\x65\x65\n')" | nc candy-mountain.picoctf.net 49321
+⊹──────[ BYTEMANCY-0 ]──────⊹
+☍⟐☉⟊☽☈⟁⧋⟡☍⟐☉⟊☽☈⟁⧋⟡☍⟐☉⟊☽☈⟁⧋⟡☍⟐
+
+Send me ASCII DECIMAL 101, 101, 101, side-by-side, no space.
+
+☍⟐☉⟊☽☈⟁⧋⟡☍⟐☉⟊☽☈⟁⧋⟡☍⟐☉⟊☽☈⟁⧋⟡☍⟐
+⊹─────────────⟡─────────────⊹
+==> picoCTF{pr1n74813_ch4r5_334c472c}
